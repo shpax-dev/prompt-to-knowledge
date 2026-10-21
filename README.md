@@ -3,13 +3,13 @@ date-generated: 2026-10-20
 date-updated: 2026-10-20
 ---
 
-# CS537 · AI Study Vault
+# Prompt to Knowledge · AI Study Vault
 
 ### Operating systems notes you can talk to.
 
-Search your notes, connect ideas, and build on what you learn—with a prompt.
+Search your notes, connect ideas, and build on what you learn with a prompt.
 
-This project brings **Codex**, **Obsidian CLI**, and a linked **Markdown knowledge base** together in a reusable study workflow. CS537 operating systems material provides a working example: explain a memory concept, practice a concurrency problem, or add new notes without starting from scratch.
+This project brings **Codex**, **Obsidian CLI**, and a linked **Markdown knowledge base** together in a reusable study workflow. **CS537 operating systems material provides a working example**: explain a memory concept, practice a concurrency problem, or add new notes without starting from scratch.
 
 **[Get started](setup/local-setup.md)** · **[Explore a topic](review/virtualization/cpu-scheduling.md)** · **[Try the practice set](exam-prep/practice/operating-systems-practice.md)**
 
@@ -26,7 +26,7 @@ This project brings **Codex**, **Obsidian CLI**, and a linked **Markdown knowled
 
 ## From scattered material to connected knowledge
 
-Course notes, review sheets, and old exams contain useful information—but finding the right explanation takes time. Adding new material can also create duplicate notes or lose the source behind an answer.
+Course notes, review sheets, and old exams contain useful information, but finding the right explanation takes time. Adding new material can also create duplicate notes or lose the source behind an answer.
 
 This vault gives the agent a clear process: **find the existing note, read the context, and make the requested change**. Related ideas stay linked, and source references stay attached to the knowledge they support.
 
