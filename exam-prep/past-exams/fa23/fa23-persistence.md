@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Fall 2023 Persistence Exam
 
 Source: `FA23 - exam.pdf`, 11 PDF pages. Printed title: **CS 537: Introduction to Operating Systems, Fall 2023: Midterm Exam #3**.

@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Address Translation and Page Tables
 
 Virtual addresses identify locations in a process's address space. Physical addresses identify locations in RAM. Two processes can use the same virtual address and map it to different physical memory.

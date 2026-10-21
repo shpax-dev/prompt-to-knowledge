@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Condition Variables
 
 A condition variable lets threads sleep until shared state may satisfy a predicate. The predicate lives in ordinary shared state protected by a mutex. The condition variable is not a stored event or a substitute for that mutex.

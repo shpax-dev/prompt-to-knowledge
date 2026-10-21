@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # File-System Layout and Traces
 
 A simple inode-based file system has a superblock, inode allocation bitmap, data allocation bitmap, inode table, and data blocks. Directories store name-to-inode mappings inside their data blocks. A bitmap allocation bit and a pointer to an object must agree.

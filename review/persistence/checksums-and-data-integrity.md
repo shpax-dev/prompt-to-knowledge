@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Checksums and Data Integrity
 
 Storage can return a read error, corrupted bits, data written to the wrong location, or old data after a lost write. Redundancy and integrity detection solve related but different problems.

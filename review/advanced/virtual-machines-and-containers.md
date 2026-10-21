@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Virtual Machines and Containers
 
 A virtual machine monitor/hypervisor presents a hardware-like environment in which a guest OS runs. It multiplexes CPU, memory, and devices while preventing the guest from directly taking over the host.

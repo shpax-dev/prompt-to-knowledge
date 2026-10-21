@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Distributed File Systems
 
 Distributed file systems expose familiar file operations while storing data on another machine. Caching reduces traffic but requires a consistency protocol that determines when clients see updates.

@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Log-Structured File Systems
 
 LFS collects updates and writes them to new locations in sequential segments. New versions supersede old blocks. It is not a journal that must copy every updated block back to a fixed home address.

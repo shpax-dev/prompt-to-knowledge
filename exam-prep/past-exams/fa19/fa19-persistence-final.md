@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Fall 2019 Persistence Final
 
 Source: `FA19 - exam.pdf`, 30 PDF pages. Printed title: **CS 537 — Introduction to Operating Systems, Fall 2019, Exam 3 — Final Exam: Persistence**. The cover names Andrea Arpaci-Dusseau. The PDF contains a 15-page exam followed by a second 15-page sequence, including handwritten solution markings visible in that second sequence. The annotations' authorship is not established.

@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Files, Descriptors, and Links
 
 A pathname identifies a route through directories. A directory entry maps a name to an inode number. An inode describes a file's metadata and data-block pointers; its names live in directory entries.

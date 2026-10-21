@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Threads and Races
 
 Threads in one process share its address space, including code, heap, and accessible stack memory. Each thread has its own logical execution context: program counter, register values, stack pointer, and stack. A stack's ownership by one thread is not memory isolation from other threads in the same process.

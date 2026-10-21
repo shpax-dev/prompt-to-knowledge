@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # SSDs and Flash Translation
 
 Flash reads and programs pages but erases larger blocks containing many pages. A page must be in a suitable erased state before programming; overwriting an existing logical page does not necessarily erase its old physical block immediately.

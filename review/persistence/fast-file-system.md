@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Fast File System
 
 FFS improves performance by placing related objects near one another on a hard disk. It addresses the cost of scattered metadata and data as well as fragmentation as a file system ages.

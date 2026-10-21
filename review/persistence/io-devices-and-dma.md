@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # I/O Devices and DMA
 
 The OS uses a device interface while a device driver translates generic requests into device-specific operations. A controller may have its own processor or firmware, but OS driver code and controller firmware are different layers.

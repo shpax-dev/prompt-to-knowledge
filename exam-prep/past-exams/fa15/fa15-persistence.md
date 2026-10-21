@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Fall 2015 Persistence Exam
 
 Source: `FA15 - exam.pdf`, 10 PDF pages. Printed title: **CS 537: Introduction to Operating Systems, Fall 2015: Midterm Exam #3 — Persistence**. The cover prints Thursday, November 19, 7:15-9:15 and states two hours.

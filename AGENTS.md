@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # CS537 Vault-Wide Agent Instructions
 
 ## Purpose and boundary
@@ -37,7 +32,7 @@ Search for a canonical concept before creating a page. Put explanations in `revi
 
 Use one focused subject per note, kebab-case filenames, a first H1 title, and contextual path-qualified wikilinks. `AGENTS.md` and `README.md` are intentional filename exceptions. Do not create an index note or an operational log. Do not duplicate explanations in exam guides when a contextual link will do.
 
-Every Markdown file has YAML `date-generated` and `date-updated` in `YYYY-MM-DD`. On creation set both to the current date in the user's timezone; preserve the former and refresh the latter when editing. Use consistent Markdown; honor local Obsidian Linter settings if configured. Optional tags may be omitted. Inspect this starter's existing tag vocabulary before adding tags; never query another vault for its tags.
+Notes carry no YAML frontmatter; do not add `date-generated`, `date-updated`, or other properties unless the user asks for them. Use consistent Markdown; honor local Obsidian Linter settings if configured. Optional tags may be omitted. Inspect this starter's existing tag vocabulary before adding tags; never query another vault for its tags.
 
 Preserve user answers, judgments, annotations, and source files. Do not invent mastery, scores, exam results, or completed tasks. No file deletion is implied by a merge or ingestion request.
 

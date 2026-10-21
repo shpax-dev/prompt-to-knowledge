@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # File Allocation and Indexing
 
 Allocation chooses where a file's blocks live; indexing finds the right physical block for a logical byte offset. Contiguous placement improves locality but makes growth and free-space management harder.

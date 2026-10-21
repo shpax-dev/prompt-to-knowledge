@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # RAID
 
 RAID combines disks behind one logical block interface. Keep usable capacity, tolerated failures, per-request latency, and steady-state throughput separate. Assume N equal disks of capacity C, random request service rate R, and sequential rate S unless a question says otherwise.

@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Network Reliability and RPC
 
 A distributed system spans machines and communication links. A timeout can mean a request was lost, the response was lost, a peer failed, or the system is merely slow. One participant cannot infer a remote operation's outcome from silence alone.

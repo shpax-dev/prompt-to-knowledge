@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Semaphores
 
 A semaphore tracks available permits and provides atomic wait/post operations. Unlike a condition-variable notification, a posted permit can be consumed later even if nobody was waiting when it was posted.

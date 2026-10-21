@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Local Setup
 
 This package is separate from any existing vault. No personal-vault paths or configuration are needed.

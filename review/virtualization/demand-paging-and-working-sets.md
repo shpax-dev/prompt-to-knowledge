@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Demand Paging and Working Sets
 
 Demand paging brings a legal page into physical memory when it is needed. A process need not have its entire address space resident before execution. Prefetching/prepaging instead predicts future needs.

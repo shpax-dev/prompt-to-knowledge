@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Journaling and Crash Consistency
 
 A single logical file operation can change several on-disk structures. A crash between writes can leave a pointer to an unallocated block, an allocated but unreachable object, or inconsistent reference counts. Device buffering and write reordering make issue order alone insufficient.

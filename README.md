@@ -1,15 +1,10 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Prompt to Knowledge · AI Study Vault
 
-### Operating systems notes you can talk to.
+### Operating systems notes you can talk to
 
 Search your notes, connect ideas, and build on what you learn with a prompt.
 
-This project brings **Codex**, **Obsidian CLI**, and a linked **Markdown knowledge base** together in a reusable study workflow. **CS537 operating systems material provides a working example**: explain a memory concept, practice a concurrency problem, or add new notes without starting from scratch.
+This project brings **Codex**, **Obsidian CLI**, and a linked **Markdown knowledge base** together in a reusable study workflow. **UW Madison's CS537 operating systems material provides a working example**: explain a memory concept, practice a concurrency problem, or add new notes without starting from scratch.
 
 **[Get started](setup/local-setup.md)** · **[Explore a topic](review/virtualization/cpu-scheduling.md)** · **[Try the practice set](exam-prep/practice/operating-systems-practice.md)**
 
@@ -34,11 +29,11 @@ This vault gives the agent a clear process: **find the existing note, read the c
 
 ```mermaid
 flowchart LR
-    U["You<br/>Ask a question or request an update"]
-    A["Codex<br/>Find context and plan the task"]
-    C["Obsidian CLI<br/>Search · Read · Create · Append"]
-    V[("Obsidian vault<br/>Markdown notes + links")]
-    G["AGENTS.md<br/>Scope · Sources · Editing rules"]
+    U["<b>You</b><br/>Ask a question or request an update"]
+    A["<b>Codex</b><br/>Find context and plan the task"]
+    C["<b>Obsidian CLI</b><br/>Search · Read · Create · Append"]
+    V[("<b>Obsidian vault</b><br/>Markdown notes + links")]
+    G["<b>AGENTS.md</b><br/>Scope · Sources · Editing rules"]
 
     U --> A
     G -. guides .-> A

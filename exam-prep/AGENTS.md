@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Exam Preparation Agent Instructions
 
 Read the root `AGENTS.md` first. For explanations also read `review/AGENTS.md` and the relevant concept note.

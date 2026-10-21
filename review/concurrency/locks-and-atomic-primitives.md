@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Locks and Atomic Primitives
 
 A lock serializes access to a critical section. It protects the agreed shared invariant only when every relevant access follows the same protocol. Acquiring a user-level lock does not prevent the scheduler from preempting the holder.

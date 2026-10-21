@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Fall 2024 Final Exam
 
 Source: `FA24 - exam.pdf`, 14 PDF pages. Printed title: **CS 537: Introduction to Operating Systems, Fall 2024: Final**.

@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Page Replacement
 
 When a needed page must be brought into a full set of frames, a replacement policy selects a victim. Keep this problem separate from replacement of translations in a [[review/virtualization/tlb-and-locality|TLB]].

@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Processes and Limited Direct Execution
 
 A program is passive code and data. A process is an executing instance with an address space, registers, a program counter, and OS-managed state. The OS multiplexes the CPU while preserving the illusion that each process has its own execution environment.

@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Concurrency Preparation
 
 This guide follows `CS537 - Exam 2 Review.pdf`. Concurrency questions test which schedules are possible and which invariants survive all allowed schedules.

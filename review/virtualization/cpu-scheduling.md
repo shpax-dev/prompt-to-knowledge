@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # CPU Scheduling
 
 Scheduling chooses among ready jobs. Keep **policy** (which job) separate from **mechanism** (timer interrupts, saved registers, dispatch, and context switching).

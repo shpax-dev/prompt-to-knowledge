@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Hard Disks and Scheduling
 
 In the simplified geometry model, a surface contains tracks, tracks contain sectors, and a cylinder comprises tracks at the same radial position across participating surfaces. Use the exam's geometry rather than assuming it models a modern drive's physical layout exactly.

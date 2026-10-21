@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Multiprocessor Scheduling
 
 Multiple CPUs introduce a tradeoff between balancing runnable work and preserving cache affinity. Moving a thread to a different CPU can improve utilization but lose warm cache state and incur synchronization or migration costs.

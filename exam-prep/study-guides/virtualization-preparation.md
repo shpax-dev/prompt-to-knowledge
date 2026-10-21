@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Virtualization Preparation
 
 This guide follows the topics in `CS537 Exam 1 Review.pdf`. It is a skill checklist, not a statement of the next exam's scope or rules.

@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Supplied Source Materials
 
 The starter was prepared from the seven PDFs supplied on 2026-10-20. They are not included in the Markdown archive. The original local inputs were read without modification. Original URLs and redistribution permissions were not provided.

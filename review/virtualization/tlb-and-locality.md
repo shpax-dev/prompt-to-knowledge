@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # TLB and Locality
 
 The translation lookaside buffer caches virtual-to-physical translations. A TLB hit avoids walking the page table for that access; it does not imply the requested data is in a CPU data cache.

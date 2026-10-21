@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Original Operating Systems Practice
 
 These are **Original practice** questions created for this starter, inspired by the mechanisms in the supplied material. They do not reproduce the historical exam questions and are not an official exam. State assumptions and show intermediate work.

@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Deadlocks and Progress
 
 Deadlock is a set of threads waiting indefinitely for resources or events that only the blocked set can release or produce. Distinguish it from starvation (one thread is repeatedly denied progress) and livelock (threads keep acting but useful work does not complete).

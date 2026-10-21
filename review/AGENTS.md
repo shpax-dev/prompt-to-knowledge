@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Review Agent Instructions
 
 Read the root `AGENTS.md` first. This file governs explanations and concept documentation under `review/`.

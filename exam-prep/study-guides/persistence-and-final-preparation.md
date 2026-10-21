@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Persistence and Final Preparation
 
 The supplied material emphasizes persistence, with broader topics in some final exams. The FA24 paper adds virtual machines, multiprocessor scheduling, networking, and Project 6 questions; do not infer identical coverage for another offering.

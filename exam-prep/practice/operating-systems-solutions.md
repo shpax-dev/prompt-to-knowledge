@@ -1,8 +1,3 @@
----
-date-generated: 2026-10-20
-date-updated: 2026-10-20
----
-
 # Derived Solutions to Original Practice
 
 These are **Derived solutions** to [[exam-prep/practice/operating-systems-practice|the original practice set]], not a source or official exam answer key. Each follows the assumptions stated in its question.
