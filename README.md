@@ -69,7 +69,7 @@ The agent runs commands through local terminal access. Obsidian supplies the CLI
 
 **2 · Add something useful**
 
-> Read the root and review instructions. Add a short, original TLB-hit example to the existing TLB note. Avoid repeating what is already there, preserve the sources, and update date-updated.
+> Read the root and review instructions. Add a short, original TLB-hit example to the existing TLB note. Avoid repeating what is already there and preserve the sources.
 
 **3 · Check the result**
 

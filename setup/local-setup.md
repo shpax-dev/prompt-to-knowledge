@@ -35,13 +35,12 @@ A read-only first prompt:
 
 A deliberate edit prompt:
 
-> Read the root and review instructions. Append a short, original example of a TLB hit to the existing TLB note, avoid repeating its existing explanation, and update date-updated. Report the changed file.
+> Read the root and review instructions. Append a short, original example of a TLB hit to the existing TLB note, avoiding repeating its existing explanation. Report the changed file.
 
 The underlying CLI supports commands like:
 
 ```sh
 obsidian vault="cs537-os-starter" append path="review/virtualization/tlb-and-page-replacement.md" content="\n## Additional example\n\nAn explicitly requested example goes here."
-obsidian vault="cs537-os-starter" property:set path="review/virtualization/tlb-and-page-replacement.md" name="date-updated" value="2026-10-20" type=date
 ```
 
 The mutation commands are illustrative, not installation steps. Use the actual current maintenance date. Search and read before appending. Consult `obsidian help append` or other command-specific help when installed syntax differs. In an agent script, use argument arrays rather than interpolating untrusted source text into a shell command.
