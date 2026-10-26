@@ -1,32 +1,55 @@
 # Supplied Source Materials
 
-The starter was prepared from the seven PDFs supplied on 2026-10-20. They are not included in the Markdown archive. The original local inputs were read without modification. Original URLs and redistribution permissions were not provided.
+The vault was prepared from 15 lecture PDFs supplied on 2026-10-26. They are not included in this repository, and the original local files were read without modification. Original URLs and redistribution permissions were not provided.
 
-## Review collections
+Each title slide reads "CS 577", Department of Computer Sciences, University of Wisconsin–Madison, and names Manolis Vlatakis. The printed term is Spring 2026 on every deck except Lecture 5, which prints Fall 2024.
 
-| Original filename | PDF pages | Optional local destination |
-| --- | ---: | --- |
-| CS537 Exam 1 Review.pdf | 115 | `review/virtualization/materials/` |
-| CS537 - Exam 2 Review.pdf | 120 | `review/concurrency/materials/` |
-| CS537 - Final Review.pdf | 73 | `review/persistence/materials/` |
+## Lecture decks
 
-The first two collections combine handwritten review with embedded printed exams and solution/annotation material. The final review is handwritten and image-only in the supplied file. Its later pages extend beyond storage into distributed systems and virtual machines. Review collection labels describe those supplied documents; they are not a guarantee of current exam boundaries.
+| Original filename | PDF pages | Printed title | Review area |
+| :--- | ---: | :--- | :--- |
+| Lecture 1_ Fundamentals of Algorithm Analysis.pdf | 132 | Basics of Algorithm Analysis | `review/primer/` |
+| Lecture 2_ Comprehensive Review of Data Structures.pdf | 60 | Data Structures & Amortized Analysis | `review/primer/` |
+| Lecture 3_ Advanced Data Structures Union-Find and Heaps.pdf | 169 | Union-Find & Binary Heaps | `review/primer/` |
+| Lecture 4_ Divide and Conquer Strategies Part A.pdf | 180 | Divide and Conquer: Sort & Search | `review/divide-and-conquer/` |
+| Lecture 5_ Divide and Conquer Strategies Part B.pdf | 131 | Divide and Conquer: Applications | `review/divide-and-conquer/` |
+| Lecture 6_ Las Vegas Algorithms Randomized Quick Sort and Selection.pdf | 158 | Randomized Algorithms: Quick Algorithms | `review/divide-and-conquer/` |
+| Lecture 7_ Greedy Algorithms Easy Level Problems.pdf | 152 | Greedy | `review/greedy/` |
+| Lecture 8_ Greedy Algorithms Hard Level Problems.pdf | 134 | More (Hard)/(Interesting) Greedy | `review/greedy/` |
+| Lecture 9_ Dynamic Programming A Primer.pdf | 96 | Dynamic Programming Primer | `review/dynamic-programming/` |
+| Lecture 10_ Dynamic Programming In Depth Examples and Applications.pdf | 277 | Dynamic Programming | `review/dynamic-programming/` |
+| Lecture 11_ Introduction to Graph Algorithms and Traversals.pdf | 155 | Graphs | `review/primer/` |
+| Lecture 12_ Shortest Paths and Minimum Spanning Trees.pdf | 138 | Graph Algorithms Part (A) | `review/greedy/`, plus Bellman–Ford in `review/dynamic-programming/` |
+| Lecture 13_ All Pair Shortest Paths.pdf | 45 | All Pair Shortest Paths | `review/dynamic-programming/` |
+| Lecture 14_ Network Flow and Combinatorial Optimization.pdf | 235 | Network Flow | `review/network-flow/` |
+| Lecture 15_ NP Reductions and Intractability.pdf | 216 | Computational Intractability | `review/np-completeness/` |
 
-## Historical papers
+The lectures are grouped by technique, not by lecture number:
 
-| Original filename | PDF pages | Printed title | Optional local destination |
-| --- | ---: | --- | --- |
-| FA15 - exam.pdf | 10 | Fall 2015: Midterm Exam #3, Persistence | `exam-prep/past-exams/fa15/materials/` |
-| FA19 - exam.pdf | 30 | Fall 2019: Exam 3 — Final Exam: Persistence | `exam-prep/past-exams/fa19/materials/` |
-| FA23 - exam.pdf | 11 | Fall 2023: Midterm Exam #3 | `exam-prep/past-exams/fa23/materials/` |
-| FA24 - exam.pdf | 14 | Fall 2024: Final | `exam-prep/past-exams/fa24/materials/` |
+- Graph traversal (Lecture 11) sits in the primer because later topics depend on it.
+- Dijkstra and minimum spanning trees are greedy algorithms.
+- Bellman–Ford and all-pairs shortest paths are dynamic programs.
+- Network flow has its own area, because its reductions lead into NP-completeness.
 
-FA19 contains two 15-page sequences whose printed page numbers repeat. References in this starter use the first sequence unless explicitly stated otherwise. Do not count the two sequences as two independent exams or assume their annotations are interchangeable. The second sequence includes handwritten solution markings; their authorship is not established. Solution/key status must be checked visually before grading from either sequence.
+No past exams, solution keys, or homework handouts were supplied, so `exam-prep/` contains only study guides and original practice.
 
 ## Reading the provenance
 
-Each concept note identifies its supporting PDF and relevant 1-based PDF page ranges. These are study-topic references, not claims that every line is quoted from those pages. Notes condense and explain mechanisms; original practice and derived examples are labeled. Questions and their distractors were not ingested as established facts.
+- Each concept note lists its supporting PDF and its relevant 1-based PDF page ranges. These are study-topic references, not claims that every line is quoted from those pages.
+- The slides build up incrementally, so a single idea often spans a run of near-duplicate pages. Page ranges cover the whole run.
+- The text was machine-extracted. Slide titles use a decorative font that does not extract cleanly, and several pages are mostly images:
+  - Lecture 3, PDF pp. 39–44;
+  - Lecture 11, the Kosaraju walkthrough on PDF pp. 73–115;
+  - Lecture 13, PDF pp. 6–22;
+  - gadget figures in Lecture 15.
+- Pages whose wording or numbers matter were checked visually and are marked "checked visually" in the notes.
+- Lecture 14, PDF pp. 126–141, restates circulations and lower bounds in a different slide style from the rest of the deck.
 
-Exact code, table layout, handwritten arithmetic, highlighted choices, and diagram arrows should be checked against the original page before using them to grade a specific exam answer. This package does not reproduce every question or supply a full historical answer key. Ambiguous handwritten details and unprovided project specifications are not filled in by guessing.
+## Unresolved source items
 
-If retaining PDFs, copy them unchanged into the destinations above and keep their original filenames. Do not move or delete the originals automatically. The source PDFs remain separate from the distributable starter unless you deliberately decide to include them.
+These are recorded but deliberately not "corrected":
+
+- **Lecture 13, PDF p. 40:** the Johnson reweighting is printed as ŵ(u, v) = w(v, u) + h(v) − h(u). That differs from the usual form, w(u, v) + h(u) − h(v). See [[review/dynamic-programming/all-pairs-shortest-paths|all-pairs shortest paths]].
+- **Lecture 7, PDF pp. 81–83:** the greedy coin trace for $2.51 skips the 50¢ coin, although it was listed as a denomination two slides earlier. That example is not reused in the notes.
+
+If you keep the PDFs locally, copy them unchanged into a `materials/` folder beside the review area they support, and keep the original filenames. Check redistribution permission before publishing course files or substantial copied course content.

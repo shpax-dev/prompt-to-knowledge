@@ -1,18 +1,18 @@
 # Prompt to Knowledge · AI Study Vault
 
-### Operating systems notes you can talk to
+### Algorithms notes you can talk to
 
-Search your notes, connect ideas, and build on what you learn with a prompt.
+Search your notes, connect ideas, and build on what you learn, all from a prompt.
 
-This project brings **Codex**, **Obsidian CLI**, and a linked **Markdown knowledge base** together in a reusable study workflow. **UW Madison's CS537 operating systems material provides a working example**: explain a memory concept, practice a concurrency problem, or add new notes without starting from scratch.
+This project combines **Codex**, the **Obsidian CLI**, and a linked **Markdown knowledge base** into a reusable study workflow. **UW–Madison's CS577 (Introduction to Algorithms) lectures are the worked example**: explain why Dijkstra fails on negative edges, practice a dynamic-programming table, or add a new example to an existing note without starting from scratch.
 
-**[Get started](setup/local-setup.md)** · **[Explore a topic](review/virtualization/cpu-scheduling.md)** · **[Try the practice set](exam-prep/practice/operating-systems-practice.md)**
+**[Get started](setup/local-setup.md)** · **[Explore a topic](review/greedy/dijkstra-shortest-paths.md)** · **[Try the practice set](exam-prep/practice/algorithms-practice.md)**
 
 <table>
   <tr>
-    <td align="center"><strong>26</strong><br>Concept notes</td>
-    <td align="center"><strong>16</strong><br>Practice questions</td>
-    <td align="center"><strong>4</strong><br>Past-exam guides</td>
+    <td align="center"><strong>44</strong><br>Concept notes</td>
+    <td align="center"><strong>18</strong><br>Practice questions</td>
+    <td align="center"><strong>6</strong><br>Study guides</td>
     <td align="center"><strong>3</strong><br>Agent instruction files</td>
   </tr>
 </table>
@@ -21,9 +21,9 @@ This project brings **Codex**, **Obsidian CLI**, and a linked **Markdown knowled
 
 ## From scattered material to connected knowledge
 
-Course notes, review sheets, and old exams contain useful information, but finding the right explanation takes time. Adding new material can also create duplicate notes or lose the source behind an answer.
+Lecture slides, worked examples, and practice problems all contain useful information, but finding the right explanation takes time. Adding new material can also create duplicate notes, or lose track of the source behind an answer.
 
-This vault gives the agent a clear process: **find the existing note, read the context, and make the requested change**. Related ideas stay linked, and source references stay attached to the knowledge they support.
+This vault gives the agent a clear process: **find the existing note, read the context, and make only the requested change**. Related ideas stay linked. Dijkstra lives with the greedy algorithms but links to Bellman–Ford in dynamic programming, and to union–find in the primer. Source references stay attached to the knowledge they support.
 
 ## How it works
 
@@ -51,25 +51,25 @@ flowchart LR
     class V knowledge
 ```
 
-The agent runs commands through local terminal access. Obsidian supplies the CLI; the repository supplies the notes and instructions. The resulting Markdown changes can be reviewed with Git.
+The agent runs commands through local terminal access. Obsidian supplies the CLI, and the repository supplies the notes and the instructions. Every change is plain Markdown that you can review with Git.
 
 ## Three ways to use it
 
 | Ask | Practice | Build |
 | :--- | :--- | :--- |
 | Find an explanation across related notes. | Work through one question at a time. | Add new material to an existing topic. |
-| “How is a TLB miss different from a page fault?” | “Quiz me on condition variables. Wait for my answer.” | “Add this example to the scheduling note and preserve its sources.” |
+| "Why does Dijkstra fail with negative edges, and what replaces it?" | "Quiz me on knapsack tables. Wait for my answer." | "Add this Kruskal example to the MST note and preserve its sources." |
 | Read the answer in chat. | Get hints and feedback on your reasoning. | Review the changed file and its links. |
 
 ### A small demo to try
 
 **1 · Read without editing**
 
-> Using only this vault, explain the difference between a TLB miss and a page fault. Link the relevant notes. Do not edit files.
+> Using only this vault, compare Dijkstra and Bellman–Ford. Link the relevant notes. Do not edit files.
 
 **2 · Add something useful**
 
-> Read the root and review instructions. Add a short, original TLB-hit example to the existing TLB note. Avoid repeating what is already there and preserve the sources.
+> Read the root and review instructions. Add a short, original Prim's-algorithm trace to the existing MST note. Avoid repeating what is already there, and preserve the sources.
 
 **3 · Check the result**
 
@@ -79,35 +79,34 @@ Open the note in Obsidian, follow its links, and review the diff in Git. You can
 
 | Area | Topics |
 | :--- | :--- |
-| **Virtualization** | Processes, CPU scheduling, address translation, TLBs, page replacement, and working sets |
-| **Concurrency** | Threads, races, locks, condition variables, semaphores, and deadlocks |
-| **Persistence** | Devices, disks, RAID, file systems, journaling, LFS, SSDs, and checksums |
-| **Advanced topics** | Network reliability, RPC, distributed file systems, VMs, containers, and multiprocessor scheduling |
-| **Exam preparation** | Three study guides, four historical exam guides, and original practice with separate solutions |
+| **Primer** | Efficiency and the word RAM, asymptotic notation, amortized analysis, union–find, heaps, graph traversal, SCCs, topological order |
+| **Divide and conquer** | Merge sort, recurrences and the Master theorem, lower bounds, binary search on the answer, inversions, Karatsuba and Strassen, closest pair, selection, randomized quicksort |
+| **Greedy** | Proof techniques (stays ahead, exchange), interval scheduling, lateness, caching, Huffman coding, Dijkstra, minimum spanning trees |
+| **Dynamic programming** | The DP method, weighted intervals, LIS, knapsack, edit distance and alignment, game DP, segmented least squares, RNA folding, Bellman–Ford, all-pairs shortest paths |
+| **Network flow** | Ford–Fulkerson, max-flow min-cut, matching and disjoint paths, min-cut applications, circulations with demands and lower bounds |
+| **NP-completeness** | Polynomial-time reductions, P, NP, and NP-completeness, Cook–Levin, classic reductions |
+| **Exam preparation** | Six study guides and 18 original practice questions, with separate derived solutions |
 
 <details>
 <summary><strong>View the folder structure</strong></summary>
 
 ```text
-cs537-os-starter/
+prompt-to-knowledge/
 ├── AGENTS.md               # Rules for the whole vault
 ├── README.md
 ├── setup/                  # Local setup and source details
 ├── review/
 │   ├── AGENTS.md           # How to explain and maintain concepts
-│   ├── virtualization/
-│   ├── concurrency/
-│   ├── persistence/
-│   └── advanced/
+│   ├── primer/
+│   ├── divide-and-conquer/
+│   ├── greedy/
+│   ├── dynamic-programming/
+│   ├── network-flow/
+│   └── np-completeness/
 ├── exam-prep/
 │   ├── AGENTS.md           # How to quiz, give hints, and grade
 │   ├── study-guides/
-│   ├── practice/
-│   └── past-exams/
-│       ├── fa15/
-│       ├── fa19/
-│       ├── fa23/
-│       └── fa24/
+│   └── practice/
 └── _inbox/                 # New material awaiting requested ingestion
 ```
 
@@ -120,49 +119,48 @@ The three `AGENTS.md` files give the agent different responsibilities:
 | File | Responsibility |
 | :--- | :--- |
 | [Vault-wide instructions](AGENTS.md) | Define task scope, note format, source handling, and when edits are allowed. |
-| [Review instructions](review/AGENTS.md) | Explain mechanisms clearly, state assumptions, and update the existing concept note. |
-| [Exam-prep instructions](exam-prep/AGENTS.md) | Support quizzes, hints, worked solutions, and grading while keeping exam years separate. |
+| [Review instructions](review/AGENTS.md) | Explain mechanisms, state the model and proof technique, and update the existing concept note. |
+| [Exam-prep instructions](exam-prep/AGENTS.md) | Support quizzes, hints, worked solutions, and grading with observable intermediate state. |
 
-Questions are read-only by default. Documentation changes require a request. Incoming material is processed only when selected, and deleting a file requires explicit approval.
+Questions are read-only by default. Documentation changes require a request. Incoming material is processed only when it is selected, and deleting a file requires explicit approval.
 
-These files guide the agent's behavior. Access permissions come from the execution environment. The root file is global **within this project**, so it does not need to replace your personal agent configuration.
+These files guide the agent's behavior; access permissions come from the execution environment. The root file is global **within this project**, so it does not need to replace your personal agent configuration.
 
 ## Get it running
 
 1. **Open the folder in Obsidian** as a separate vault.
-2. **Enable Obsidian CLI** in Settings → General and complete registration. Keep Obsidian running.
+2. **Enable the Obsidian CLI** in Settings → General and complete registration. Keep Obsidian running.
 3. **Open the same folder in Codex** with local terminal access.
-4. **Confirm the connection**, then try a prompt above.
+4. **Confirm the connection**, then try one of the prompts above:
 
 ```sh
-obsidian vault="cs537-os-starter" vault info=name
-obsidian vault="cs537-os-starter" search query="path:review paging"
+obsidian vault="prompt-to-knowledge" vault info=name
+obsidian vault="prompt-to-knowledge" search query="path:review Dijkstra"
 ```
 
-Use the name you assigned to your local vault. The [setup guide](setup/local-setup.md) covers requirements, command examples, and optional Git setup.
+Use the name you gave your local vault. The [setup guide](setup/local-setup.md) covers requirements, command examples, and optional Git setup.
 
 ## Engineering choices
 
 - **Plain Markdown:** notes are easy to inspect, edit, and version.
-- **Obsidian-aware commands:** search and edit through the same application that manages the knowledge base.
-- **Search before creation:** extend the existing explanation when a topic already has a home.
-- **Source references:** keep a path back to the original material.
-- **Scoped instructions:** use different workflows for concept review and exam practice.
-- **Visible changes:** review the actual files and diffs after an update.
+- **Obsidian-aware commands:** the agent searches and edits through the same application that manages the knowledge base.
+- **Search before creation:** an existing explanation is extended whenever a topic already has a home.
+- **Organized by technique, not by lecture:** a question about "greedy" or "DP" lands in one folder, and cross-links connect the graph algorithms that span folders.
+- **Source references:** every note points back to the original PDF pages, and unresolved slide discrepancies are recorded instead of silently fixed.
+- **Scoped instructions:** concept review and exam practice follow different workflows.
+- **Visible changes:** you review the actual files and diffs after every update.
 
 The project demonstrates AI workflow design, command-line integration, technical writing, and knowledge organization through a concrete study use case.
 
 <details>
 <summary><strong>Sources, scope, and reuse</strong></summary>
 
-The notes synthesize three supplied review collections and four historical exams. They are study documentation, not full PDF transcriptions, an official answer key, or a complete current course syllabus. Original exercises and derived solutions are labeled.
+The notes synthesize 15 supplied CS577 lecture decks. They are study documentation, not slide transcriptions, an official answer key, or a complete syllabus. Original examples and derived solutions are labeled, and unclear source details are not filled in by guessing. See [source materials](setup/source-materials.md) for filenames, page counts, and the unresolved items.
 
-Historical exam rules stay attached to their year. Unprovided project specifications and unclear source details are not filled in by guessing. See [source materials](setup/source-materials.md) for filenames, page counts, and optional local PDF locations.
+The original PDFs are not bundled. Check redistribution permission before publishing course files or substantial copied course content. This vault does not assign a license to the course authors' work.
 
-Original PDFs are not bundled. Check redistribution permission before publishing course files or substantial copied course content. This starter does not assign a license to the course authors' work.
+Keep a separate personal vault private. Local file storage does not mean offline inference: text the agent reads can be sent to its model provider.
 
-Keep a separate personal vault private. Local file storage does not mean offline inference: text read by the agent can be sent to its model provider.
-
-To adapt the starter to another subject, replace the study content and adjust the folder instructions to match your workflow.
+To adapt the vault to another subject, replace the study content and adjust the folder instructions to match your workflow.
 
 </details>
