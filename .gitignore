@@ -1,0 +1,16 @@
+# OS metadata
+.DS_Store
+
+# Obsidian workspace and session state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.trash/
+
+# Credentials
+.env
+.env.*
+!.env.example
+
+# Locally retained course PDFs (see setup/source-materials.md)
+**/materials/
+*.pdf
