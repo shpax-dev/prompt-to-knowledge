@@ -12,7 +12,7 @@ This design can be applied into managing documentation of any kind. You can use 
 
 I found myself frequently forgetting a lot of the processes and protocols I learned at work, repeatedly having to ask my coworkers simple questions about tasks I've already completed before. For me, this project is aimed at increasing my own efficiency by keeping a robust, AI powered documentation engine.
 
-**[Get started](setup/local-setup.md)** · **[Explore a topic](dijkstra-shortest-paths.md)** · **[Try the practice set](exam-prep/practice/algorithms-practice.md)**
+**[Get started](setup/local-setup.md)** · **[Explore a topic](concepts/greedy/dijkstra-shortest-paths.md)** · **[Try the practice set](exam-prep/practice/algorithms-practice.md)**
 
 <table>
   <tr>
