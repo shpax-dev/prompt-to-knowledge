@@ -6,6 +6,12 @@ Search your notes, connect ideas, and build on what you learn, all from a prompt
 
 This project combines **Codex**, the **Obsidian CLI**, and a linked **Markdown knowledge base** into a reusable study workflow. **UW–Madison's CS577 (Introduction to Algorithms) lectures are the worked example**: explain why Dijkstra fails on negative edges, practice a dynamic-programming table, or add a new example to an existing note without starting from scratch.
 
+This design can be applied into managing documentation of any kind. You can use this for maintaining your family's health records, cooking recipes, and so much more.
+
+## Inspiration
+
+I found myself frequently forgetting a lot of the processes and protocols I learned at work, repeatedly having to ask my coworkers simple questions about tasks I've already completed before. For me, this project is aimed at increasing my own efficiency by keeping a robust, AI powered documentation engine.
+
 **[Get started](setup/local-setup.md)** · **[Explore a topic](dijkstra-shortest-paths.md)** · **[Try the practice set](exam-prep/practice/algorithms-practice.md)**
 
 <table>
