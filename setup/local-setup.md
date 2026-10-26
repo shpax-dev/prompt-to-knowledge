@@ -13,8 +13,8 @@ This vault is separate from any existing vault. No personal-vault paths or confi
 ```sh
 obsidian help
 obsidian vault="prompt-to-knowledge" vault info=name
-obsidian vault="prompt-to-knowledge" search query="path:review knapsack"
-obsidian vault="prompt-to-knowledge" read path="review/dynamic-programming/knapsack-and-subset-sum.md"
+obsidian vault="prompt-to-knowledge" search query="path:concepts knapsack"
+obsidian vault="prompt-to-knowledge" read path="concepts/dynamic-programming/knapsack-and-subset-sum.md"
 ```
 
 ## How the connection works
@@ -25,22 +25,22 @@ Prompt → local agent → AGENTS.md guidance → Obsidian CLI → notes
 
 This vault supplies instructions and Markdown. Obsidian provides the CLI, and the agent environment supplies terminal execution. No custom bridge server is included. Files live locally, but text the agent reads can be sent to its model provider as part of the conversation, so local storage alone does not mean offline inference.
 
-The root `AGENTS.md` provides vault-wide instructions. The review and exam-prep files specialize tasks in their folders. The root file explicitly tells the agent to read those files when routing a task, including tasks launched from the root.
+The root `AGENTS.md` provides vault-wide instructions. The concepts and exam-prep files specialize tasks in their folders. The root file explicitly tells the agent to read those files when routing a task, including tasks launched from the root.
 
 ## Read and append
 
 A read-only first prompt:
 
-> Read the root instructions and explain why Dijkstra's algorithm fails on negative edges, using only the review notes. Do not edit files.
+> Read the root instructions and explain why Dijkstra's algorithm fails on negative edges, using only the concept notes. Do not edit files.
 
 A deliberate edit prompt:
 
-> Read the root and review instructions. Append a short, original Prim's-algorithm trace to the existing MST note, avoiding repetition of its existing explanation. Report the changed file.
+> Read the root and concepts instructions. Append a short, original Prim's-algorithm trace to the existing MST note, avoiding repetition of its existing explanation. Report the changed file.
 
 The underlying CLI supports commands like:
 
 ```sh
-obsidian vault="prompt-to-knowledge" append path="review/greedy/minimum-spanning-trees.md" content="An explicitly requested example goes here."
+obsidian vault="prompt-to-knowledge" append path="concepts/greedy/minimum-spanning-trees.md" content="An explicitly requested example goes here."
 ```
 
 These mutation commands are illustrative, not installation steps. Search and read before appending. Check `obsidian help append` or other command-specific help when the installed syntax differs.

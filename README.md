@@ -6,7 +6,7 @@ Search your notes, connect ideas, and build on what you learn, all from a prompt
 
 This project combines **Codex**, the **Obsidian CLI**, and a linked **Markdown knowledge base** into a reusable study workflow. **UW–Madison's CS577 (Introduction to Algorithms) lectures are the worked example**: explain why Dijkstra fails on negative edges, practice a dynamic-programming table, or add a new example to an existing note without starting from scratch.
 
-**[Get started](setup/local-setup.md)** · **[Explore a topic](review/greedy/dijkstra-shortest-paths.md)** · **[Try the practice set](exam-prep/practice/algorithms-practice.md)**
+**[Get started](setup/local-setup.md)** · **[Explore a topic](dijkstra-shortest-paths.md)** · **[Try the practice set](exam-prep/practice/algorithms-practice.md)**
 
 <table>
   <tr>
@@ -69,7 +69,7 @@ The agent runs commands through local terminal access. Obsidian supplies the CLI
 
 **2 · Add something useful**
 
-> Read the root and review instructions. Add a short, original Prim's-algorithm trace to the existing MST note. Avoid repeating what is already there, and preserve the sources.
+> Read the root and concepts instructions. Add a short, original Prim's-algorithm trace to the existing MST note. Avoid repeating what is already there, and preserve the sources.
 
 **3 · Check the result**
 
@@ -95,7 +95,7 @@ prompt-to-knowledge/
 ├── AGENTS.md               # Rules for the whole vault
 ├── README.md
 ├── setup/                  # Local setup and source details
-├── review/
+├── concepts/
 │   ├── AGENTS.md           # How to explain and maintain concepts
 │   ├── primer/
 │   ├── divide-and-conquer/
@@ -119,7 +119,7 @@ The three `AGENTS.md` files give the agent different responsibilities:
 | File | Responsibility |
 | :--- | :--- |
 | [Vault-wide instructions](AGENTS.md) | Define task scope, note format, source handling, and when edits are allowed. |
-| [Review instructions](review/AGENTS.md) | Explain mechanisms, state the model and proof technique, and update the existing concept note. |
+| [Concepts instructions](concepts/AGENTS.md) | Explain mechanisms, state the model and proof technique, and update the existing concept note. |
 | [Exam-prep instructions](exam-prep/AGENTS.md) | Support quizzes, hints, worked solutions, and grading with observable intermediate state. |
 
 Questions are read-only by default. Documentation changes require a request. Incoming material is processed only when it is selected, and deleting a file requires explicit approval.
@@ -135,7 +135,7 @@ These files guide the agent's behavior; access permissions come from the executi
 
 ```sh
 obsidian vault="prompt-to-knowledge" vault info=name
-obsidian vault="prompt-to-knowledge" search query="path:review Dijkstra"
+obsidian vault="prompt-to-knowledge" search query="path:concepts Dijkstra"
 ```
 
 Use the name you gave your local vault. The [setup guide](setup/local-setup.md) covers requirements, command examples, and optional Git setup.
@@ -147,7 +147,7 @@ Use the name you gave your local vault. The [setup guide](setup/local-setup.md) 
 - **Search before creation:** an existing explanation is extended whenever a topic already has a home.
 - **Organized by technique, not by lecture:** a question about "greedy" or "DP" lands in one folder, and cross-links connect the graph algorithms that span folders.
 - **Source references:** every note points back to the original PDF pages, and unresolved slide discrepancies are recorded instead of silently fixed.
-- **Scoped instructions:** concept review and exam practice follow different workflows.
+- **Scoped instructions:** concept notes and exam practice follow different workflows.
 - **Visible changes:** you review the actual files and diffs after every update.
 
 The project demonstrates AI workflow design, command-line integration, technical writing, and knowledge organization through a concrete study use case.

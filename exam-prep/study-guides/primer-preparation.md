@@ -4,13 +4,13 @@ This guide covers Lectures 1–3 and 11. Primer questions test whether you can s
 
 ## Work in this order
 
-1. **State the model.** Say what n measures, which operations cost O(1), and whether the bound is worst case, average, or amortized. See [[review/primer/problems-and-efficiency|problems and efficiency]].
-2. **Compare growth rates.** Reduce each function to a dominant term, then compare with the polynomial, polylog, and exponential rules in [[review/primer/asymptotic-notation|asymptotic notation]]. Claim Θ only when you have both an upper and a lower bound.
-3. **Amortize sequences.** Choose a charge per operation, say what the stored credit pays for, and give an invariant that keeps the credit non-negative. See [[review/primer/amortized-analysis|amortized analysis]].
+1. **State the model.** Say what n measures, which operations cost O(1), and whether the bound is worst case, average, or amortized. See [[concepts/primer/problems-and-efficiency|problems and efficiency]].
+2. **Compare growth rates.** Reduce each function to a dominant term, then compare with the polynomial, polylog, and exponential rules in [[concepts/primer/asymptotic-notation|asymptotic notation]]. Claim Θ only when you have both an upper and a lower bound.
+3. **Amortize sequences.** Choose a charge per operation, say what the stored credit pays for, and give an invariant that keeps the credit non-negative. See [[concepts/primer/amortized-analysis|amortized analysis]].
 4. **Trace structures as arrays.**
-   - [[review/primer/union-find|Union–find]]: write the `parent` array and the root depths after each Union.
-   - [[review/primer/binary-heaps|Heaps]]: write the 0-based array after each shift.
-5. **Graph traversal.** Name the [[review/primer/graph-basics-and-traversal|representation, then the traversal]], then the O(m + n) cost. For directed graphs, check whether the question needs [[review/primer/strongly-connected-components|SCCs]] or a [[review/primer/dags-and-topological-ordering|topological order]].
+   - [[concepts/primer/union-find|Union–find]]: write the `parent` array and the root depths after each Union.
+   - [[concepts/primer/binary-heaps|Heaps]]: write the 0-based array after each shift.
+5. **Graph traversal.** Name the [[concepts/primer/graph-basics-and-traversal|representation, then the traversal]], then the O(m + n) cost. For directed graphs, check whether the question needs [[concepts/primer/strongly-connected-components|SCCs]] or a [[concepts/primer/dags-and-topological-ordering|topological order]].
 
 ## Trace table
 

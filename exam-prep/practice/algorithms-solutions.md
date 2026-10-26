@@ -11,7 +11,7 @@ These **derived solutions** are for the [[exam-prep/practice/algorithms-practice
 - n log n = o(n^1.01), because log n = o(n^0.01).
 - Any polynomial is o(1.01ⁿ).
 
-See [[review/primer/asymptotic-notation|asymptotic notation]].
+See [[concepts/primer/asymptotic-notation|asymptotic notation]].
 
 ## 2. Union–find trace
 
@@ -70,7 +70,7 @@ The total is 1 + 1 + 2 = 4: the pairs (4,1), (4,3), (4,2), and (3,2).
 - **Groups of 3:** the pivot beats about half of the n/3 medians and 2 elements in each of their groups, about n/3 elements. The larger side can hold about 2n/3, giving T(n) ≤ T(n/3) + T(2n/3) + cn. The fractions sum to 1, so the result is Θ(n log n), which is not linear.
 - **Groups of 7:** the pivot beats about half of the n/7 medians and 4 elements in each of their groups, about 2n/7. The larger side holds at most about 5n/7, giving T(n) ≤ T(n/7) + T(5n/7) + cn. Since 6/7 < 1, this is O(n).
 
-Linear time needs the two fractions to sum to *strictly* less than 1. See [[review/divide-and-conquer/selection-and-median-of-medians|median of medians]].
+Linear time needs the two fractions to sum to *strictly* less than 1. See [[concepts/divide-and-conquer/selection-and-median-of-medians|median of medians]].
 
 ## 7. Interval scheduling
 
@@ -118,7 +118,7 @@ The optimum is **7**, using items {1, 2}. Trace back:
 - v[2,5] ≠ v[1,5], so take item 2 and move to w = 2.
 - v[1,2] ≠ v[0,2], so take item 1.
 
-This is the worked table in [[review/dynamic-programming/knapsack-and-subset-sum|knapsack]].
+This is the worked table in [[concepts/dynamic-programming/knapsack-and-subset-sum|knapsack]].
 
 ## 11. Edit distance
 
@@ -163,7 +163,7 @@ A valid assignment exists exactly when the max flow equals n.
 - **Assignment ⇒ flow:** send one unit along s → student → assigned project → t. Project capacities hold because the assignment respects cⱼ.
 - **Flow ⇒ assignment:** by integrality, take an integral max flow of value n. Each student edge carries exactly 1, so it leaves along exactly one project edge. Each project receives at most cⱼ units.
 
-**Runtime:** C = n, so Ford–Fulkerson takes O(mn), where m counts the acceptable pairs. See [[review/network-flow/bipartite-matching-and-disjoint-paths|bipartite matching]].
+**Runtime:** C = n, so Ford–Fulkerson takes O(mn), where m counts the acceptable pairs. See [[concepts/network-flow/bipartite-matching-and-disjoint-paths|bipartite matching]].
 
 ## 15. Project selection
 
@@ -193,4 +193,4 @@ Number the cycle 1–2–3–4–5–1.
 
 ## 18. Pseudo-polynomial time
 
-The input writes W in about log W bits, so O(nW) is exponential in the input *length* when W is around 2ⁿ. NP-completeness concerns time polynomial in the encoding length. An algorithm running in time polynomial in n and log W would put Subset Sum in P, and then P = NP. See [[review/dynamic-programming/knapsack-and-subset-sum|knapsack]] and [[review/np-completeness/p-np-and-np-completeness|P versus NP]].
+The input writes W in about log W bits, so O(nW) is exponential in the input *length* when W is around 2ⁿ. NP-completeness concerns time polynomial in the encoding length. An algorithm running in time polynomial in n and log W would put Subset Sum in P, and then P = NP. See [[concepts/dynamic-programming/knapsack-and-subset-sum|knapsack]] and [[concepts/np-completeness/p-np-and-np-completeness|P versus NP]].

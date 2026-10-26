@@ -13,7 +13,7 @@ For each iteration, record:
 | Updated flow | The edges that changed |
 | v(f) | The running flow value |
 
-When no augmenting path remains, list the nodes reachable from s in G_f. That set is A* of a minimum cut. Check that c(A*, B*) = v(f), counting only edges from A* to B*. See [[review/network-flow/max-flow-and-ford-fulkerson|Ford–Fulkerson]] and [[review/network-flow/max-flow-min-cut|max-flow min-cut]].
+When no augmenting path remains, list the nodes reachable from s in G_f. That set is A* of a minimum cut. Check that c(A*, B*) = v(f), counting only edges from A* to B*. See [[concepts/network-flow/max-flow-and-ford-fulkerson|Ford–Fulkerson]] and [[concepts/network-flow/max-flow-min-cut|max-flow min-cut]].
 
 ## Designing a reduction
 
@@ -25,11 +25,11 @@ When no augmenting path remains, list the nodes reachable from s in G_f. That se
 
 | Need | Pattern |
 | :--- | :--- |
-| Pair items, each used at most once | [[review/network-flow/bipartite-matching-and-disjoint-paths\|Bipartite matching]] |
+| Pair items, each used at most once | [[concepts/network-flow/bipartite-matching-and-disjoint-paths\|Bipartite matching]] |
 | Paths that share no edges | Unit capacities plus path decomposition |
-| Two-way partition with penalties | [[review/network-flow/min-cut-applications\|Min cut]]: segmentation, project selection |
+| Two-way partition with penalties | [[concepts/network-flow/min-cut-applications\|Min cut]]: segmentation, project selection |
 | "Can team z still win?" | Baseball elimination network |
-| Several sources and sinks, or required minimum usage | [[review/network-flow/circulations-demands-and-lower-bounds\|Demands and lower bounds]] |
+| Several sources and sinks, or required minimum usage | [[concepts/network-flow/circulations-demands-and-lower-bounds\|Demands and lower bounds]] |
 
 ## Common mistakes
 

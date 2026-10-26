@@ -6,7 +6,7 @@ Maintain this standalone CS577 algorithms study vault. These instructions apply 
 
 At task start, identify this vault's root and configured Obsidian vault name. Examples assume `prompt-to-knowledge`; replace that name if the local vault was named differently. Never guess another open vault as a fallback.
 
-Read `review/AGENTS.md` before work involving review material, and `exam-prep/AGENTS.md` before practice, grading, exam analysis, or study planning, even if the task started at the root. For a task spanning both, follow both. Nested instructions specialize these shared boundaries; user instructions take priority.
+Read `concepts/AGENTS.md` before work involving concept notes, and `exam-prep/AGENTS.md` before practice, grading, exam analysis, or study planning, even if the task started at the root. For a task spanning both, follow both. Nested instructions specialize these shared boundaries; user instructions take priority.
 
 ## Classify the request
 
@@ -32,10 +32,10 @@ Use supplied material first. Browse for new material only when the user requests
 
 Search for a canonical concept note before creating a page.
 
-- Explanations go in `review/`, grouped by technique: `primer`, `divide-and-conquer`, `greedy`, `dynamic-programming`, `network-flow`, `np-completeness`.
+- Explanations go in `concepts/`, grouped by technique: `primer`, `divide-and-conquer`, `greedy`, `dynamic-programming`, `network-flow`, `np-completeness`.
 - Study strategy and exercises go in `exam-prep/`.
 - Operational setup goes in `setup/`.
-- Supporting PDFs, if kept, go in a `materials/` folder beside the review area they support, following `setup/source-materials.md`.
+- Supporting PDFs, if kept, go in a `materials/` folder beside the concept area they support, following `setup/source-materials.md`.
 
 Use one focused subject per note, kebab-case filenames, a first H1 title, and contextual path-qualified wikilinks. `AGENTS.md` and `README.md` are intentional filename exceptions. Do not create an index note or an operational log. Do not duplicate explanations in exam guides when a contextual link will do.
 
@@ -49,9 +49,9 @@ Consult `setup/local-setup.md` and official or installed command-specific help b
 
 ```sh
 obsidian vault="prompt-to-knowledge" vault info=name
-obsidian vault="prompt-to-knowledge" search query="path:review Dijkstra"
-obsidian vault="prompt-to-knowledge" search:context query="path:review Bellman"
-obsidian vault="prompt-to-knowledge" read path="review/greedy/dijkstra-shortest-paths.md"
+obsidian vault="prompt-to-knowledge" search query="path:concepts Dijkstra"
+obsidian vault="prompt-to-knowledge" search:context query="path:concepts Bellman"
+obsidian vault="prompt-to-knowledge" read path="concepts/greedy/dijkstra-shortest-paths.md"
 ```
 
 Use the Obsidian CLI for vault searches, note reads, tags, links, creation, append operations, moves, and properties. Use exact vault-relative paths for mutations. Prefer `search:context` for matching text; `content` is not a search flag. Inspect the tag vocabulary before tag changes. Never use `overwrite` without first reading the target and confirming that the user authorized the replacement.

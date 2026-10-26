@@ -7,7 +7,7 @@ This guide covers Lecture 15. Almost every NP-completeness question uses the sam
 To prove that X is NP-complete:
 
 1. **X ∈ NP:** name the certificate and give a polynomial-time check.
-2. **Pick a known NP-complete problem Y** from the same family in the [[review/np-completeness/classic-np-complete-reductions|taxonomy]].
+2. **Pick a known NP-complete problem Y** from the same family in the [[concepts/np-completeness/classic-np-complete-reductions|taxonomy]].
 3. **Prove Y ≤ₚ X:**
    - give the construction, from an arbitrary instance of Y to an instance of X, in polynomial time;
    - prove that a yes-instance of Y gives a yes-instance of X;
@@ -15,7 +15,7 @@ To prove that X is NP-complete:
 
 ## Direction check
 
-Say it aloud: "If I could solve **X** quickly, I could solve **Y** quickly." Y is the known hard problem. If your sentence names the new problem as Y, the reduction is backwards. See [[review/np-completeness/polynomial-time-reductions|polynomial-time reductions]].
+Say it aloud: "If I could solve **X** quickly, I could solve **Y** quickly." Y is the known hard problem. If your sentence names the new problem as Y, the reduction is backwards. See [[concepts/np-completeness/polynomial-time-reductions|polynomial-time reductions]].
 
 ## Family cheat sheet
 
@@ -32,8 +32,8 @@ Say it aloud: "If I could solve **X** quickly, I could solve **Y** quickly." Y i
 
 - A certifier saying "no" for one t does not prove a no-instance.
 - NP-hard does not mean in NP. NP-complete means both.
-- An O(nW) algorithm does not show P = NP, because it is pseudo-polynomial. See [[review/dynamic-programming/knapsack-and-subset-sum|knapsack]].
-- If NP ≠ coNP, then P ≠ NP. Know the contrapositive proof in [[review/np-completeness/p-np-and-np-completeness|P, NP, and NP-completeness]].
+- An O(nW) algorithm does not show P = NP, because it is pseudo-polynomial. See [[concepts/dynamic-programming/knapsack-and-subset-sum|knapsack]].
+- If NP ≠ coNP, then P ≠ NP. Know the contrapositive proof in [[concepts/np-completeness/p-np-and-np-completeness|P, NP, and NP-completeness]].
 
 Use [[exam-prep/practice/algorithms-practice|original practice questions]] 16–18.
 

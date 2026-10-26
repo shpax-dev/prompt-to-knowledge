@@ -1,6 +1,6 @@
 # Exam Preparation Agent Instructions
 
-Read the root `AGENTS.md` first. For explanations, also read `review/AGENTS.md` and the relevant concept note.
+Read the root `AGENTS.md` first. For explanations, also read `concepts/AGENTS.md` and the relevant concept note.
 
 ## Select a mode
 
@@ -35,6 +35,6 @@ Keep answers, grades, and schedules in chat unless the user explicitly asks for 
 - Practice sets go under `practice/`.
 - Analysis of an added past exam goes under `past-exams/<term>/`.
 - Reusable preparation methods go under `study-guides/`.
-- Lasting concept explanations go in `review/`, linked from the exam material.
+- Lasting concept explanations go in `concepts/`, linked from the exam material.
 
 Build time-based plans from the user's actual exam date, available study time, course scope, and observed weaknesses. Otherwise offer an adaptable sequence without fabricated dates or progress. Do not create an operational activity log or an empty error-tracker template.
