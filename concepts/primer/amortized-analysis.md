@@ -1,4 +1,4 @@
-# Amortized Analysis
+## Amortized Analysis
 
 A data structure answers a sequence of operations given one at a time, which makes it a *dynamic* problem. Worst-case analysis of a single operation is pessimistic when expensive operations are rare.
 
@@ -8,7 +8,7 @@ A data structure answers a sequence of operations given one at a time, which mak
 amortized cost = (∑ actual cost of operation i) / n
 ```
 
-## Accounting method
+### Accounting Method
 
 Think of time as money:
 
@@ -18,7 +18,7 @@ Think of time as money:
 
 Total actual cost = dollars borrowed − dollars left in the pocket ≤ dollars borrowed. If the pocket never goes negative, the borrowed amount is an upper bound on the true cost.
 
-## Binary counter
+### Binary Counter
 
 Increment a k-bit counter n times, starting from 0. The cost of one increment is the number of bits it flips.
 
@@ -28,7 +28,7 @@ Increment a k-bit counter n times, starting from 0. The cost of one increment is
 
 **Derived check:** 8 increments from 0 flip 1, 2, 1, 3, 1, 2, 1, 4 bits, for 15 total, which is at most 2·8 = 16.
 
-## Lazily initialized array
+### Lazily Initialized Array
 
 The goal is O(1) `INIT`, `READ`, and `WRITE`, where unwritten cells read as 0. This assumes `malloc` returns an *uninitialized* block in O(1) time, which is true in C/C++ but not Java.
 

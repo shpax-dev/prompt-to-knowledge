@@ -1,8 +1,8 @@
-# Asymptotic Notation
+## Asymptotic Notation
 
 Asymptotic notation compares how functions grow as n → ∞. It ignores constant factors and small inputs.
 
-## Definitions
+### Definitions
 
 | Notation | Meaning | Formal condition |
 | :--- | :--- | :--- |
@@ -14,7 +14,7 @@ Asymptotic notation compares how functions grow as n → ∞. It ignores constan
 
 Key property: f ∈ Θ(g) if and only if f ∈ O(g) and f ∈ Ω(g). Writing f = O(g) is common but is technically an abuse of notation for f ∈ O(g).
 
-## Worked example: insertion sort
+### Worked Example: Insertion Sort
 
 Insertion sort's worst case is T(n) = an² + bn − d for constants a > 0, b, d. Then:
 
@@ -22,13 +22,13 @@ Insertion sort's worst case is T(n) = an² + bn − d for constants a > 0, b, d.
 - T ∈ o(n³), but T ∉ o(n²).
 - T ∈ ω(n), but T ∉ ω(n²).
 
-## Useful growth rules
+### Useful Growth Rules
 
 - **Polynomials:** if c_d > 0, then c_d·n^d + … + c₁·n + c₀ ∈ Θ(n^d). The highest-degree term wins.
 - **Logarithms:** log_b n = log_a n / log_a b, so every base gives Θ(log n). For any a, b > 0, (log n)^a ∈ o(n^b). Every polylog is smaller than every polynomial.
 - **Exponentials:** for r > 1 and d > 0, n^d ∈ o(rⁿ). For 1 < r < s, rⁿ ∈ o(sⁿ). Every polynomial is smaller than every exponential.
 
-## The completed table from the lecture
+### The Completed Table from the Lecture
 
 Logs are base 2.
 

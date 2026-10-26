@@ -1,8 +1,8 @@
-# Classic NP-Complete Reductions
+## Classic NP-Complete Reductions
 
 Each proof below follows the three-step recipe in [[concepts/np-completeness/p-np-and-np-completeness|P, NP, and NP-completeness]]: membership in NP, a known hard source problem, and a reduction proved in both directions.
 
-## A taxonomy of hard problems
+### A Taxonomy of Hard Problems
 
 | Family | Problems |
 | :--- | :--- |
@@ -15,7 +15,7 @@ Each proof below follows the three-step recipe in [[concepts/np-completeness/p-n
 
 When a new problem resembles a family, try a reduction from that family first.
 
-## Sequencing
+### Sequencing
 
 - **Hamiltonian Cycle:** does a digraph have a cycle that visits every node exactly once?
   - *In NP:* the certificate is the order in which nodes are visited.
@@ -25,20 +25,20 @@ When a new problem resembles a family, try a reduction from that family first.
 - **Hamiltonian Path:**
   - *HamCycle ≤ₚ HamPath:* split one vertex v into v′, which keeps v's outgoing edges, and v″, which keeps its incoming edges. A Hamiltonian path from v′ to v″ is exactly a Hamiltonian cycle through v.
 
-## Partitioning
+### Partitioning
 
 - **3-D Matching:** given disjoint sets X, Y, Z of size n and triples T ⊆ X × Y × Z, can n triples cover every element exactly once?
   - *3SAT ≤ₚ 3DM:* each variable gets a ring gadget of 2k core elements and 2k tips. Choosing the even or odd triples sets the variable to true or false. Each clause gets two elements that must take a free tip from a satisfying literal. (n − 1)k clean-up gadgets absorb the leftover tips.
 - **3-Coloring:** can the nodes be colored with 3 colors so that neighbors differ?
   - *3SAT ≤ₚ 3-Coloring:* a base triangle T–F–B fixes the palette. Each variable gets nodes vᵢ and ¬vᵢ, joined to each other and both joined to B, so one is colored True and the other False. A clause gadget, shown in a figure on PDF p. 167, can be colored only if at least one of its literals is colored True.
 
-## Numerical
+### Numerical
 
 - **Subset Sum:** do some of the numbers w₁, …, wₙ add up to exactly W?
   - The O(nW) [[concepts/dynamic-programming/knapsack-and-subset-sum|DP]] is only pseudo-polynomial.
   - *3DM ≤ₚ Subset Sum:* treat each triple (i, j, k) as a 3n-digit number with 1s in positions i, n + j, and 2n + k. Use base m + 1 so additions never carry. The target W has a 1 in every position.
 
-## Constraint satisfaction
+### Constraint Satisfaction
 
 - **NAE-4SAT:** is there an assignment under which every clause has at least one true literal *and* at least one false literal?
   - *3SAT ≤ₚ NAE-4SAT:* add the same new literal v to every clause.

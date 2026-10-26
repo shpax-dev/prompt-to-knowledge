@@ -1,8 +1,8 @@
-# Counting Inversions
+## Counting Inversions
 
 An **inversion** in a list A is a pair of indices i < j with A[i] > A[j]. The number of inversions measures how far A is from sorted: it is 0 for a sorted list and n(n − 1)/2 for a reversed one.
 
-## Three solutions
+### Three Solutions
 
 1. **Check every pair:** for each i, check the n − i later items, for ∑ (n − i) = n(n − 1)/2 = Θ(n²) comparisons.
 2. **Insertion sort:** each swap fixes exactly one inversion, so it makes as many swaps as there are inversions and runs in Θ(n + #inversions).
@@ -22,7 +22,7 @@ MergeCount(A, B): pop min{front of A, front of B} into S;
 
 The recurrence is the same as merge sort's, so the runtime is O(n log n).
 
-## Derived trace
+### Derived Trace
 
 A = [2, 4, 1, 3, 5]. The halves are [2, 4] and [1, 3, 5], with 0 inversions inside each.
 

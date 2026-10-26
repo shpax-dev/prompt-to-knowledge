@@ -1,8 +1,8 @@
-# Derived Algorithms Solutions
+## Derived Algorithms Solutions
 
 These **derived solutions** are for the [[exam-prep/practice/algorithms-practice|original practice set]]. They are not official answers. Every numeric trace was checked by an independent recomputation.
 
-## 1. Growth rates
+### 1. Growth Rates
 
 (log n)^10 < 2^(lg n) = n < n log n = Θ(log(n!)) < n^1.01 < 1.01ⁿ.
 
@@ -13,7 +13,7 @@ These **derived solutions** are for the [[exam-prep/practice/algorithms-practice
 
 See [[concepts/primer/asymptotic-notation|asymptotic notation]].
 
-## 2. Union–find trace
+### 2. Union–find Trace
 
 | Operation | Effect |
 | :--- | :--- |
@@ -27,7 +27,7 @@ See [[concepts/primer/asymptotic-notation|asymptotic notation]].
 
 The final `parent` array for elements 1..8 is [2, 4, 4, 8, 6, 8, 8, 8]. The root is 8, with depth 3. Find(1) follows 1 → 2 → 4 → 8. The depth bound holds: 8 elements ≥ 2³.
 
-## 3. Heap trace
+### 3. Heap Trace
 
 ```text
 insert 7: [7]
@@ -41,7 +41,7 @@ DeleteMin → 1; move 9 to the root, shift down past 3 → [3, 4, 9, 7, 6]
 
 When 1 is inserted it starts at index 3 and swaps with 7 (index 1), then with 4 (index 0).
 
-## 4. Recurrences
+### 4. Recurrences
 
 - (a) a = b = 3, so n^(log₃3) = n = f(n). Master case 2 gives Θ(n log n).
 - (b) n^(log₂4) = n² = f(n). Case 2 gives Θ(n² log n).
@@ -49,7 +49,7 @@ When 1 is inserted it starts at index 3 and swaps with 7 (index 1), then with 4 
 - (d) n^(lg 7) ≈ n^2.81 dominates n². Case 1 gives Θ(n^(lg 7)).
 - (e) 1/5 + 7/10 = 9/10 < 1, so the Akra–Bazzi exponent p is below 1 and the result is Θ(n).
 
-## 5. Merge-and-count
+### 5. Merge-and-count
 
 - [4, 1] splits into [4] and [1]. Merging adds 1 when 1 is taken from the back half. Result [1, 4], 1 inversion.
 - [3, 2, 5] splits into [3] and [2, 5].
@@ -65,14 +65,14 @@ When 1 is inserted it starts at index 3 and swaps with 7 (index 1), then with 4 
 
 The total is 1 + 1 + 2 = 4: the pairs (4,1), (4,3), (4,2), and (3,2).
 
-## 6. Group size
+### 6. Group Size
 
 - **Groups of 3:** the pivot beats about half of the n/3 medians and 2 elements in each of their groups, about n/3 elements. The larger side can hold about 2n/3, giving T(n) ≤ T(n/3) + T(2n/3) + cn. The fractions sum to 1, so the result is Θ(n log n), which is not linear.
 - **Groups of 7:** the pivot beats about half of the n/7 medians and 4 elements in each of their groups, about 2n/7. The larger side holds at most about 5n/7, giving T(n) ≤ T(n/7) + T(5n/7) + cn. Since 6/7 < 1, this is O(n).
 
 Linear time needs the two fractions to sum to *strictly* less than 1. See [[concepts/divide-and-conquer/selection-and-median-of-medians|median of medians]].
 
-## 7. Interval scheduling
+### 7. Interval Scheduling
 
 Sorted by finish time: B4, C5, A6, D7, E8, F9, G10, H11.
 
@@ -84,7 +84,7 @@ The selected set is {B, D, H}, of size 3. Brute force confirms 3 is the maximum.
 
 **Counterexample to shortest-first:** (0, 5), (4, 7), (6, 10). Shortest-first takes (4, 7), which overlaps both others, for 1 interval. The optimum is 2.
 
-## 8. Huffman
+### 8. Huffman
 
 - Merge e (.10) + c (.15) = .25. Choosing d instead of c on this tie is also valid.
 - Merge d (.15) + b (.20) = .35.
@@ -95,13 +95,13 @@ One code: a = 0, e = 100, c = 101, d = 110, b = 111.
 
 ABL = 0.40·1 + 0.60·3 = **2.2 bits per symbol**.
 
-## 9. Maximum lateness
+### 9. Maximum Lateness
 
 The jobs are already in EDF order. Finish times are 3, 5, 6, 10, 13, 15, against deadlines 6, 8, 9, 9, 14, 15. Lateness is 0, 0, 0, 1, 0, 0, so the maximum is **1**. Brute force over all 720 orders confirms this is optimal.
 
 **Swap argument:** suppose i runs just before j and dⱼ < dᵢ. After the swap, j finishes earlier, so its lateness cannot rise. i now finishes at j's old finish time f, and its new lateness f − dᵢ ≤ f − dⱼ, which was j's old lateness. So the maximum does not increase.
 
-## 10. Knapsack table
+### 10. Knapsack Table
 
 | Row / capacity | 0 | 1 | 2 | 3 | 4 | 5 |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -120,7 +120,7 @@ The optimum is **7**, using items {1, 2}. Trace back:
 
 This is the worked table in [[concepts/dynamic-programming/knapsack-and-subset-sum|knapsack]].
 
-## 11. Edit distance
+### 11. Edit Distance
 
 E[SUNDAY, SATURDAY] = **3**. One optimal alignment:
 
@@ -131,7 +131,7 @@ SATURDAY
 
 That is 2 insertions (A, T) and 1 substitution (N → R).
 
-## 12. Bellman–Ford
+### 12. Bellman–Ford
 
 | i | s | a | b | c | d |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -143,14 +143,14 @@ That is 2 insertions (A, T) and 1 substitution (N → R).
 
 The shortest path is s → b → a → c → d, with length 0. There is **no** negative cycle: the only cycle, b → a → c → d → b, has weight −1 + 2 − 3 + 4 = 2. A 5th round would change nothing.
 
-## 13. Max flow and min cut
+### 13. Max Flow and Min Cut
 
 One sequence of augmenting paths: s→a→t (4), s→b→t (6), s→a→b→t (3). That gives v(f) = **13**.
 
 - In the final residual graph, s reaches only a, so ({s, a}, {b, t}) is a min cut with capacity s→b 6 + a→b 3 + a→t 4 = 13.
 - **Not unique:** ({s, a, b}, {t}) also has capacity 4 + 9 = 13.
 
-## 14. Reduction design
+### 14. Reduction Design
 
 **Construction:**
 
@@ -165,7 +165,7 @@ A valid assignment exists exactly when the max flow equals n.
 
 **Runtime:** C = n, so Ford–Fulkerson takes O(mn), where m counts the acceptable pairs. See [[concepts/network-flow/bipartite-matching-and-disjoint-paths|bipartite matching]].
 
-## 15. Project selection
+### 15. Project Selection
 
 **Network:**
 
@@ -175,7 +175,7 @@ A valid assignment exists exactly when the max flow equals n.
 
 C = 14. The best feasible set is {p1, p2, p3, p4}, with profit 10 + 4 − 6 − 3 = **5**. The min cut is C − 5 = 9, the two sink edges, 6 + 3. For comparison, {p1, p3} earns only 4.
 
-## 16. Independent set and vertex cover
+### 16. Independent Set and Vertex Cover
 
 Number the cycle 1–2–3–4–5–1.
 
@@ -183,7 +183,7 @@ Number the cycle 1–2–3–4–5–1.
 - Its complement {2, 4, 5} is a vertex cover of size 3, and no 2 vertices cover all 5 edges.
 - Sizes 2 + 3 = 5 = n, as the complement theorem predicts.
 
-## 17. Clique is NP-complete
+### 17. Clique is NP-complete
 
 1. **In NP:** the certificate is k vertices. Check all C(k, 2) pairs for adjacency in polynomial time.
 2. **Known hard problem:** Independent Set.
@@ -191,6 +191,6 @@ Number the cycle 1–2–3–4–5–1.
    - If S is independent in G, no two of its vertices are adjacent in G, so all are adjacent in Ḡ: a clique.
    - If S is a clique in Ḡ, it is independent in G.
 
-## 18. Pseudo-polynomial time
+### 18. Pseudo-polynomial Time
 
 The input writes W in about log W bits, so O(nW) is exponential in the input *length* when W is around 2ⁿ. NP-completeness concerns time polynomial in the encoding length. An algorithm running in time polynomial in n and log W would put Subset Sum in P, and then P = NP. See [[concepts/dynamic-programming/knapsack-and-subset-sum|knapsack]] and [[concepts/np-completeness/p-np-and-np-completeness|P versus NP]].

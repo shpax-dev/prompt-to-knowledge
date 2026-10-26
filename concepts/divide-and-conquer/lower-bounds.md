@@ -1,14 +1,14 @@
-# Lower Bounds
+## Lower Bounds
 
 An algorithm gives an **upper bound** on a problem's complexity. A **lower bound** says that *every* algorithm must do at least some amount of work, which tells you when further improvement is futile. To prove one, you must show that certain steps are necessary for any algorithm, not just for the one you wrote.
 
-## Adversary argument
+### Adversary Argument
 
 Imagine an adversary who answers the algorithm's queries so as to force as many steps as possible, while staying consistent with some valid input.
 
 **Search in an unsorted array is Ω(n).** For each position the algorithm inspects, the adversary answers "not x". Re-inspecting a position gains nothing. If the algorithm stops before inspecting every position, the adversary places x in a position that was never checked. So any correct algorithm must, in the worst case, inspect all n positions.
 
-## Decision-tree argument
+### Decision-tree Argument
 
 Model a comparison-based algorithm as a binary tree:
 
@@ -25,14 +25,14 @@ A tree of height k has at most 2^k leaves. If the problem needs M distinct outpu
 
 **Pitfall:** phrase the argument about *all* algorithms that use the model's queries, not about one specific algorithm's tree.
 
-## Lower bounds by reduction
+### Lower Bounds by Reduction
 
 Suppose algorithm A sorts everything except the order of the last two elements. Then A still needs Ω(n log n) comparisons:
 
 - *Counting:* it must distinguish n!/2 outputs, and log(n!/2) = Ω(n log n).
 - *Reduction:* if A ran in o(n log n), then "run A, then compare the last two elements" would sort in o(n log n) using comparisons, which is impossible.
 
-## A tighter example: 0/1 arrays
+### A Tighter Example: 0/1 Arrays
 
 Sorting an array that contains only 0s and 1s:
 

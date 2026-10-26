@@ -1,8 +1,8 @@
-# All-Pairs Shortest Paths
+## All-Pairs Shortest Paths
 
 The goal is the distance d(v, u), and a shortest path, for every ordered pair of vertices. Store the distances in an n × n matrix D, and the paths in predecessor matrices.
 
-## Options
+### Options
 
 | Approach | Weights | Time |
 | :--- | :--- | :--- |
@@ -13,7 +13,7 @@ The goal is the distance d(v, u), and a shortest path, for every ordered pair of
 
 The single-source building blocks are [[concepts/dynamic-programming/bellman-ford|Bellman–Ford]] and [[concepts/greedy/dijkstra-shortest-paths|Dijkstra]]. For a dense graph, m = Θ(n²), so n × Dijkstra costs O(n³) anyway. When m = o(n²), n × Dijkstra beats Θ(n³).
 
-## Floyd–Warshall
+### Floyd–Warshall
 
 Number the vertices v₁, …, vₙ. Let dₖ(i, j) be the shortest i → j distance using only v₁, …, vₖ as *intermediate* vertices.
 
@@ -39,7 +39,7 @@ E  INF    4    5   11    0
 
 For example, B→C = 18 via B→D→E→C. A derived recomputation reproduces every entry.
 
-## Johnson's algorithm
+### Johnson's Algorithm
 
 1. Add a new vertex s with a 0-weight edge to every vertex.
 2. Run Bellman–Ford from s to get h(v) = d(s, v), and stop if there is a negative cycle.
@@ -47,7 +47,7 @@ For example, B→C = 18 via B→D→E→C. A derived recomputation reproduces ev
 
 **Unresolved:** the slide on PDF p. 40 prints the reweighting as ŵ(u, v) = w(v, u) + h(v) − h(u). The usual textbook form is ŵ(u, v) = w(u, v) + h(u) − h(v). That form is non-negative because h(v) ≤ h(u) + w(u, v), and it adds h(u) − h(v) to *every* u–v path, so shortest paths do not change. Confirm which form the course intends before relying on the slide's version.
 
-## Single-source summary
+### Single-source Summary
 
 | Setting | Algorithm | Time |
 | :--- | :--- | :--- |

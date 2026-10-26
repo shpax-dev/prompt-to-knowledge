@@ -1,6 +1,6 @@
-# Huffman Coding
+## Huffman Coding
 
-## Prefix codes
+### Prefix Codes
 
 - **Fixed width:** each symbol in {a, b, c, d, e} gets 3 bits, as in ASCII. Decoding is trivial.
 - **Variable width:** shorter codes for frequent symbols save space. But {0, 1, 10, 01, 11} is ambiguous: the string 0010 decodes in several ways.
@@ -14,17 +14,17 @@ ABL(T) = ∑ fₓ · depth(x)
 
 The goal is to minimize ABL.
 
-## Structure of optimal trees
+### Structure of Optimal Trees
 
 - **Theorem:** an optimal prefix tree is *full*: every internal node has 2 children. *Exchange:* if node u has one child v, replace u by v. Every leaf below gets one bit shorter, which contradicts optimality.
 - **Lemma:** let x and y be the two least frequent symbols. Some optimal tree has x and y as siblings at maximum depth.
   - *Exchange:* a full tree has two sibling leaves a and b at maximum depth d. Swapping x with a changes the cost by Δ·(f(x) − f(a)), where Δ ≥ 0 is the depth difference. Since f(x) ≤ f(a), the cost does not increase. Then do the same for y and b.
 
-## Top-down is not optimal
+### Top-down is Not Optimal
 
 Shannon–Fano splits the symbols into two sets of nearly equal total frequency and recurses. For frequencies a .32, b .25, c .20, d .18, e .05, it gives ABL 2.25, while the optimum is 2.23.
 
-## Huffman's algorithm (bottom-up)
+### Huffman's Algorithm (Bottom-up)
 
 ```text
 while more than one symbol remains:

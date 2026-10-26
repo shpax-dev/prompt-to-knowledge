@@ -1,10 +1,10 @@
-# Supplied Source Materials
+## Supplied Source Materials
 
 The vault was prepared from 15 lecture PDFs supplied on 2026-10-26. They are not included in this repository, and the original local files were read without modification. Original URLs and redistribution permissions were not provided.
 
 Each title slide reads "CS 577", Department of Computer Sciences, University of Wisconsin–Madison, and names Manolis Vlatakis. The printed term is Spring 2026 on every deck except Lecture 5, which prints Fall 2024.
 
-## Lecture decks
+### Lecture Decks
 
 | Original filename | PDF pages | Printed title | Concept area |
 | :--- | ---: | :--- | :--- |
@@ -33,7 +33,7 @@ The lectures are grouped by technique, not by lecture number:
 
 No past exams, solution keys, or homework handouts were supplied, so `exam-prep/` contains only study guides and original practice.
 
-## Reading the provenance
+### Reading the Provenance
 
 - Each concept note lists its supporting PDF and its relevant 1-based PDF page ranges. These are study-topic references, not claims that every line is quoted from those pages.
 - The slides build up incrementally, so a single idea often spans a run of near-duplicate pages. Page ranges cover the whole run.
@@ -45,7 +45,7 @@ No past exams, solution keys, or homework handouts were supplied, so `exam-prep/
 - Pages whose wording or numbers matter were checked visually and are marked "checked visually" in the notes.
 - Lecture 14, PDF pp. 126–141, restates circulations and lower bounds in a different slide style from the rest of the deck.
 
-## Unresolved source items
+### Unresolved Source Items
 
 These are recorded but deliberately not "corrected":
 

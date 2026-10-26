@@ -1,4 +1,4 @@
-# Bipartite Matching and Edge-Disjoint Paths
+## Bipartite Matching and Edge-Disjoint Paths
 
 These are the first examples of **reducing a problem to max flow**. A good reduction answers three questions:
 
@@ -6,7 +6,7 @@ These are the first examples of **reducing a problem to max flow**. A good reduc
 2. **Edges:** what is each edge's direction, and what is its capacity?
 3. **Correspondence:** does every flow give a valid solution, and every solution give a flow of equal value? Is the construction efficient?
 
-## Maximum bipartite matching
+### Maximum Bipartite Matching
 
 Input: a bipartite graph G = (X ∪ Y, E). A **matching** is a set of edges in which no node appears twice. The goal is a largest matching.
 
@@ -24,7 +24,7 @@ Input: a bipartite graph G = (X ∪ Y, E). A **matching** is a set of edges in w
 
 **Runtime:** with n = |X| = |Y| and m = |E|, the flow value is at most n, so plain Ford–Fulkerson runs in O(mC) = O(mn).
 
-## Edge-disjoint paths
+### Edge-disjoint Paths
 
 Find the largest number of s–t paths that share no edge.
 

@@ -1,8 +1,8 @@
-# The Dynamic Programming Method
+## The Dynamic Programming Method
 
 Dynamic programming (DP) is "extreme divide and conquer". It uses many overlapping subproblems, but far fewer than brute force, and it solves them from smallest to largest while storing each answer. Richard Bellman chose the name in the 1950s, when "programming" meant planning, and "dynamic" sounded exciting to his Air Force sponsors.
 
-## Why remembering matters
+### Why Remembering Matters
 
 - **Factorial:** n! = (n − 1)!·n needs M(n) = M(n − 1) + 1 = n multiplications. Each smaller value is needed exactly once.
 - **Naive Fibonacci:** F(n) = F(n − 1) + F(n − 2) recomputes the same values exponentially often. The number of additions satisfies A(n) = A(n − 1) + A(n − 2) + 1, with A(0) = A(1) = 0.
@@ -13,7 +13,7 @@ n! is a much bigger number than F(n), yet it is far cheaper to compute. The diff
 
 *Derived aside:* the lecture asks how to compute F(n) in O(log n). One way is to raise the 2 × 2 matrix with rows (1, 1) and (1, 0) to the n-th power using [[concepts/divide-and-conquer/fast-multiplication|fast exponentiation]].
 
-## Shortest paths in a DAG: the template
+### Shortest Paths in a DAG: the Template
 
 Process the nodes in [[concepts/primer/dags-and-topological-ordering|topological order]]:
 
@@ -28,7 +28,7 @@ Every predecessor of x is finished before x, so each d(x) is computed exactly on
 
 DP is shortest or longest path computation on an implicit DAG of subproblems: an edge A → B means B needs A's answer.
 
-## Comparing the three paradigms
+### Comparing the Three Paradigms
 
 | Paradigm | Subproblems | Recursion tree, if unmemoized |
 | :--- | :--- | :--- |
@@ -38,7 +38,7 @@ DP is shortest or longest path computation on an implicit DAG of subproblems: an
 
 Greedy is like factorial: once the data is sorted by the right criterion, Opt(n) = Opt(n − 1) ⊕ local choice.
 
-## How to write a DP solution
+### How to Write a DP Solution
 
 The lecture's rule is "no pseudocode". A DP answer gives:
 

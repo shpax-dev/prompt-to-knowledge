@@ -1,6 +1,6 @@
-# Edit Distance and Sequence Alignment
+## Edit Distance and Sequence Alignment
 
-## Edit distance
+### Edit Distance
 
 This is the minimum number of insertions, deletions, and substitutions that change A[1..m] into B[1..n]. For example, TUESDAY → THUESDAY → THURSDAY takes 2 edits. Equivalently, align the strings and count the mismatched columns:
 
@@ -26,7 +26,7 @@ E[i, j] = min( E[i, j−1] + 1,                    # insert B[j]
 
 **Space:** each row needs only the previous row, so O(n) space suffices for the value.
 
-## Sequence alignment (Needleman–Wunsch)
+### Sequence Alignment (Needleman–Wunsch)
 
 This generalizes edit distance with costs:
 
@@ -46,7 +46,7 @@ The runtime is O(mn).
 
 **Graph view:** A[i][j] equals the minimum-cost path from (0, 0) to (i, j) in a grid graph with diagonal edges of cost α and horizontal and vertical edges of cost δ. *Proof:* strong induction on i + j.
 
-## Source example: "mean" versus "name"
+### Source Example: "Mean" versus "Name"
 
 The costs are δ = 2 and α = 0 for the same letter, 3 for a vowel paired with a consonant, and 1 otherwise. Rows are prefixes of "mean", written bottom to top; columns are prefixes of "name".
 

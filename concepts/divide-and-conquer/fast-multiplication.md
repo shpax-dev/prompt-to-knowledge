@@ -1,8 +1,8 @@
-# Fast Exponentiation and Multiplication
+## Fast Exponentiation and Multiplication
 
 These three problems share one recipe. Ask the standard divide-and-conquer questions: how many recursive calls, on what size, and what does each level cost? Then cut the number of recursive calls using algebra.
 
-## Fast exponentiation
+### Fast Exponentiation
 
 Compute xⁿ, counting each multiplication as one step. The naive product x·x·…·x uses n − 1 multiplications, which is O(n).
 
@@ -16,7 +16,7 @@ Each case makes one recursive call, and an odd step is always followed by an eve
 
 In the real world, multiplying large numbers is not O(1). That is why integer multiplication below counts bit operations.
 
-## Integer multiplication (Karatsuba)
+### Integer Multiplication (Karatsuba)
 
 Multiply two n-bit numbers, counting bit operations. Grade-school partial products cost O(n²).
 
@@ -37,7 +37,7 @@ middle = 6164 − 672 − 2652 = 2840
 672·10⁴ + 2840·10² + 2652 = 7,006,652 ✓
 ```
 
-## Matrix multiplication (Strassen)
+### Matrix Multiplication (Strassen)
 
 The naive triple loop for n × n matrices costs O(n³). Splitting into 2 × 2 blocks [a b; c d]·[e f; g h] needs 8 block products plus O(n²) additions: T(n) ≤ 8T(n/2) + cn² = O(n³). No gain.
 

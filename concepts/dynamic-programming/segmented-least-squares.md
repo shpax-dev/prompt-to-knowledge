@@ -1,10 +1,10 @@
-# Segmented Least Squares
+## Segmented Least Squares
 
 Given points (x₁, y₁), …, (xₙ, yₙ) with x₁ < x₂ < … < xₙ, a single line y = ax + b has squared error ∑ (yᵢ − axᵢ − b)². Fitting one line to data that bends is a poor fit. Fitting a separate line to every pair of points is overfitting.
 
 **Problem:** partition the points, by x, into contiguous segments. Minimize the total error of the best line in each segment, plus a fixed cost C per segment. C trades accuracy against the number of segments.
 
-## The DP
+### The DP
 
 **Definitions:** e(i, j) is the minimum squared error of one line through points i..j.
 

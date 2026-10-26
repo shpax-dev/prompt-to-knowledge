@@ -1,8 +1,8 @@
-# Min-Cut Applications
+## Min-Cut Applications
 
 In these problems the answer is a **partition**, read off a minimum cut. The trick is to arrange the capacities so that each cut's capacity equals the cost you want to minimize.
 
-## Image segmentation
+### Image Segmentation
 
 Each pixel i has a foreground likelihood aᵢ > 0 and a background likelihood bᵢ > 0. Each pair of neighboring pixels i, j has a separation penalty pᵢⱼ, paid if exactly one of them is in the foreground set A.
 
@@ -15,7 +15,7 @@ Each pixel i has a foreground likelihood aᵢ > 0 and a background likelihood b�
   - i → t with capacity bᵢ.
 - **Why the min cut is right:** a pixel in A contributes bᵢ to the cut, a pixel in B contributes aᵢ, and each separated neighbor pair contributes pᵢⱼ. That is exactly the expression being minimized.
 
-## Project selection
+### Project Selection
 
 Projects have profits pᵢ, which may be negative. A precedence graph says project i requires project j. Choose a feasible set A, one closed under requirements, that maximizes profit(A) = ∑ over A of pᵢ.
 
@@ -28,7 +28,7 @@ Projects have profits pᵢ, which may be negative. A precedence graph says proje
 
 **Derived example:** p1 = +10, p2 = +4, p3 = −6, p4 = −3. p1 requires p3; p2 requires p3 and p4. Here C = 14. The best feasible set is all four projects, with profit 5, and a max-flow computation confirms the min cut is 14 − 5 = 9.
 
-## Baseball elimination
+### Baseball Elimination
 
 Each team x has wₓ wins so far, and each pair x, y has gₓᵧ games left against each other. Has team z been eliminated?
 

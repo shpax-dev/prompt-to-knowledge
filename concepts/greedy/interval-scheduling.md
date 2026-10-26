@@ -1,8 +1,8 @@
-# Interval Scheduling
+## Interval Scheduling
 
 Each request rᵢ = (sᵢ, fᵢ) has a start time and a finish time. Two requests are **compatible** if one finishes no later than the other starts: fᵢ ≤ sⱼ or fⱼ ≤ sᵢ. The goal is a compatible set of maximum size.
 
-## Which greedy rule?
+### Which Greedy Rule?
 
 | Heuristic | Optimal? |
 | :--- | :--- |
@@ -16,7 +16,7 @@ Each request rᵢ = (sᵢ, fᵢ) has a start time and a finish time. Two request
 - *Earliest start:* (0, 10), (1, 2), (3, 4). Greedy takes only (0, 10), but the optimum has 2.
 - *Shortest:* (0, 5), (4, 7), (6, 10). Greedy takes (4, 7), which overlaps both others, but the optimum is (0, 5) and (6, 10).
 
-## Finish-First
+### Finish-First
 
 ```text
 S ← ∅
@@ -35,13 +35,13 @@ while requests remain:
 
 There can be several optimal schedules, so the claim proved is |S| = |S*|, not S = S*.
 
-## Implementation
+### Implementation
 
 Sort by finish time in O(n log n). Then scan once, keeping a request whenever its start time is at least the last kept finish time, in O(n). The total is O(n log n).
 
 **Derived trace:** a(1,4), b(3,5), c(0,6), d(5,7), e(3,9), f(5,9), g(6,10), h(8,11). By finish time, keep a. b, c, and e start before 4, so skip them. Keep d. f and g start before 7, so skip them. Keep h. The result is {a, d, h}, of size 3.
 
-## Variants
+### Variants
 
 - **Online:** requests arrive one at a time, without knowledge of the rest.
 - **Weighted:** each interval has a value. Greedy fails, so use [[concepts/dynamic-programming/weighted-interval-scheduling|dynamic programming]].

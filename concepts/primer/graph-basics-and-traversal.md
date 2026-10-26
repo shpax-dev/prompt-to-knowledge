@@ -1,15 +1,15 @@
-# Graph Basics and Traversal
+## Graph Basics and Traversal
 
 A graph G = (V, E) is a set of vertices and a set of edges joining pairs of vertices. Write n = |V| and m = |E|. Graphs model transportation, communication, information, social, and dependency networks.
 
-## Vocabulary
+### Vocabulary
 
 - **Special graphs:** complete graphs, cycles, paths, trees and forests, bipartite graphs, digraphs, and DAGs.
 - **Tree:** a connected graph with no cycles. It has exactly one path between any two nodes and |V| = |E| + 1. An unrooted tree with at least 2 nodes has at least 2 leaves.
 - **s–t connectivity:** is there a path from s to t?
 - **Connected component:** a connected subgraph with no edges leaving it.
 
-## Representations
+### Representations
 
 With n = |V| and m = |E|:
 
@@ -22,7 +22,7 @@ With n = |V| and m = |E|:
 
 The table follows the slide. The adjacency-list space bound on the slide is loose: storing each edge once per endpoint takes O(n + m), and that tighter bound is what makes BFS and DFS linear. "List neighbors: O(1)" means you can reach the list immediately; iterating over it still costs the vertex's degree.
 
-## Traversal
+### Traversal
 
 A generic exploration grows a reached set R from {s} by repeatedly adding any v ∉ R that has an edge from R. Without an order for scanning edges, a naive version costs about O(|E|² log |V|). BFS and DFS choose that order.
 

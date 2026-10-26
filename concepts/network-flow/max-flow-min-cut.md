@@ -1,4 +1,4 @@
-# The Max-Flow Min-Cut Theorem
+## The Max-Flow Min-Cut Theorem
 
 An **s–t cut** (A, B) partitions V with s ∈ A and t ∈ B. Its **capacity** is the total capacity of edges going from A to B:
 
@@ -8,7 +8,7 @@ c(A, B) = ∑ over edges e leaving A of cₑ
 
 Edges from B back to A do not count. Every unit of flow must cross from A to B at some point.
 
-## The chain of results
+### The Chain of Results
 
 1. **Flow-value lemma:** for any flow f and any cut (A, B), v(f) = f_out(A) − f_in(A). Proof: sum the conservation equations over the nodes of A. Every node except s contributes 0.
 2. **Weak duality:** v(f) ≤ c(A, B), because v(f) = f_out(A) − f_in(A) ≤ f_out(A) ≤ c(A, B).
@@ -21,11 +21,11 @@ Edges from B back to A do not count. Every unit of flow must cross from A to B a
 
 **Max-flow = min-cut** holds for every flow network.
 
-## Finding a minimum cut
+### Finding a Minimum Cut
 
 Given a maximum flow, build G_f in O(m). Search from s by BFS or DFS to find A* in O(m + n), and set B* = V − A*. The total is O(m).
 
-## Source example
+### Source Example
 
 Network: s→u 20, s→v 10, u→v 30, u→t 10, v→t 20.
 

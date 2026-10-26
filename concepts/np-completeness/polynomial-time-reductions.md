@@ -1,18 +1,18 @@
-# Polynomial-Time Reductions
+## Polynomial-Time Reductions
 
 - **Easy problems** have polynomial-time algorithms; this is the class P.
 - **Hard problems** are ones for which no efficient algorithm is known.
 
 Reductions are how hardness is compared. They are always stated for **decision problems**.
 
-## Decision versus optimization
+### Decision versus Optimization
 
 Optimization asks for the largest matching; the decision version asks whether there is a matching of size ≥ k. They are polynomially equivalent:
 
 - **Optimization → decision:** solve the optimization version and compare its value with k.
 - **Decision → optimization:** the answer lies between 0 and an upper bound N, such as min(|A|, |B|) for matching. Ask for k = N, N − 1, … until you get "yes", or [[concepts/divide-and-conquer/binary-search-on-the-answer|binary-search]] the range.
 
-## Definition: Y ≤ₚ X
+### Definition: Y ≤ₚ X
 
 "Y reduces to X in polynomial time" means that any instance of Y can be solved by transforming it in polynomial time into polynomially many instances of X, calling a black-box solver for X on each, and combining the answers efficiently.
 
@@ -23,7 +23,7 @@ Optimization asks for the largest matching; the decision version asks whether th
 
 Reductions are transitive: Z ≤ₚ Y and Y ≤ₚ X imply Z ≤ₚ X.
 
-## Packing versus covering: Independent Set and Vertex Cover
+### Packing versus Covering: Independent Set and Vertex Cover
 
 - **Independent Set (IS):** is there an S ⊆ V with |S| ≥ k and no two nodes of S adjacent? This is a *packing* problem.
 - **Vertex Cover (VC):** is there an S ⊆ V with |S| ≤ k touching every edge? This is a *covering* problem.
@@ -35,14 +35,14 @@ Reductions are transitive: Z ≤ₚ Y and Y ≤ₚ X imply Z ≤ₚ X.
 
 So IS ≤ₚ VC and VC ≤ₚ IS, with k ↔ n − k.
 
-## Reductions to set problems
+### Reductions to Set Problems
 
 - **Set Cover (SC):** given a universe U, subsets S₁, …, Sₘ, and k, do at most k subsets cover U?
   - **VC ≤ₚ SC:** set U = E, and for each vertex v make the set of edges incident to v. A vertex cover of size ≤ k corresponds to a set cover of size ≤ k.
 - **Set Packing (SP):** are there at least k pairwise disjoint subsets?
   - **IS ≤ₚ SP:** the same construction. Independent vertices have disjoint edge sets.
 
-## Gadgets: 3SAT ≤ₚ IS
+### Gadgets: 3SAT ≤ₚ IS
 
 **3SAT:** a conjunction of clauses, each an OR of exactly 3 literals. Is there a satisfying truth assignment?
 
@@ -54,7 +54,7 @@ A **gadget** is a piece of X that simulates one component of Y.
 
 An independent set of size k picks exactly one node per triangle, a literal made true. Conflict edges stop xᵢ and ¬xᵢ from both being chosen. So the formula is satisfiable exactly when the graph has an independent set of size ≥ k.
 
-## The chains so far
+### The Chains so Far
 
 ```text
 3SAT ≤ₚ IS ≤ₚ VC ≤ₚ SC

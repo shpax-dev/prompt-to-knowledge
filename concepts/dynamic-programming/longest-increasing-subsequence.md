@@ -1,8 +1,8 @@
-# Longest Increasing Subsequence
+## Longest Increasing Subsequence
 
 Given an integer array A[1..n], find the longest subsequence whose values strictly increase. A **subsequence** keeps the original order but may skip items; a **substring** must be contiguous. An array has 2ⁿ subsequences, so brute force is exponential.
 
-## Recursive formulation
+### Recursive Formulation
 
 ```text
 LIS(k, A[1..n]) = length of the longest increasing subsequence of A whose values are all > k
@@ -14,7 +14,7 @@ LIS(k, A[1..n]) = length of the longest increasing subsequence of A whose values
 
 Call it as LIS(−∞, A[1..n]). It runs in O(2ⁿ), but there are only O(n²) *distinct* calls: k is always −∞ or some A[i], and the suffix is always some A[j..n].
 
-## The DP
+### The DP
 
 **Matrix:** a 2-D array L, where L[i, j] is the length of the longest increasing subsequence of A[j..n] using only values greater than A[i], for i < j. Add a sentinel A[0] = −∞.
 

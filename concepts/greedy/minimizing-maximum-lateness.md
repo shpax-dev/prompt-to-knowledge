@@ -1,8 +1,8 @@
-# Minimizing Maximum Lateness
+## Minimizing Maximum Lateness
 
 There are n jobs and one machine that runs one job at a time. Job i has processing time tᵢ and deadline dᵢ. If job i finishes at time fᵢ, its lateness is lᵢ = max(0, fᵢ − dᵢ). The goal is to schedule **all** jobs to minimize the maximum lateness.
 
-## Which greedy rule?
+### Which Greedy Rule?
 
 | Heuristic | Counterexample, as (tᵢ, dᵢ) |
 | :--- | :--- |
@@ -12,7 +12,7 @@ There are n jobs and one machine that runs one job at a time. Job i has processi
 
 EDF ignores the processing times entirely.
 
-## Optimality by exchange
+### Optimality by Exchange
 
 1. **No idle time:** some optimal schedule has no gaps, and EDF has none.
 2. **Inversion:** a pair where job i runs before job j but dⱼ < dᵢ.

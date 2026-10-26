@@ -1,8 +1,8 @@
-# Dijkstra's Shortest Paths
+## Dijkstra's Shortest Paths
 
 Input: a directed graph G = (V, E) with n nodes and m edges, a source s that reaches every node, and edge lengths ℓₑ ≥ 0. Goal: a shortest path from s to every node.
 
-## Algorithm (Dijkstra, 1956)
+### Algorithm (Dijkstra, 1956)
 
 ```text
 S ← {s}; d(s) ← 0
@@ -13,7 +13,7 @@ while S ≠ V:
 
 It is greedy because it always finalizes the closest unexplored node. You can think of it as BFS with continuous, weighted distances.
 
-## Correctness (stays ahead)
+### Correctness (Stays Ahead)
 
 **Theorem:** at every point, for each u ∈ S, the path Pᵤ the algorithm found is a shortest s–u path.
 
@@ -23,7 +23,7 @@ It is greedy because it always finalizes the closest unexplored node. You can th
 - When v is added, Pᵥ is the cheapest path that leaves S by a single edge.
 - Any other s–v path must leave S somewhere, say at a node y ∉ S. Because lengths are non-negative, that path already costs at least d′(y) ≥ d′(v) when it reaches y. If it were shorter, y would have been chosen instead of v.
 
-## Negative edges break it
+### Negative Edges Break it
 
 The guarantee that the cheapest edge out of S is part of a shortest path fails.
 
@@ -31,7 +31,7 @@ The guarantee that the cheapest edge out of S is part of a shortest path fails.
 
 Adding a constant to every edge does not fix this. A path with x edges gains x times the constant, so paths with different numbers of edges are penalized differently. Use [[concepts/dynamic-programming/bellman-ford|Bellman–Ford]] instead.
 
-## Runtime
+### Runtime
 
 There are n − 1 iterations.
 
@@ -45,7 +45,7 @@ The binary-heap version is the same priority-queue pattern as [[concepts/greedy/
 
 **Related:** [[concepts/primer/graph-basics-and-traversal|BFS]] computes shortest paths when every edge has length 1.
 
-## What each exploration builds
+### What Each Exploration Builds
 
 - **BFS/DFS:** a tree, with no distance guarantee.
 - **Dijkstra:** a tree whose s–u paths are all shortest paths.

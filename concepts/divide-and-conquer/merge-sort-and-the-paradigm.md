@@ -1,10 +1,10 @@
-# Merge Sort and the Divide-and-Conquer Paradigm
+## Merge Sort and the Divide-and-Conquer Paradigm
 
-## Reductions first
+### Reductions First
 
 **Reducing** problem X to problem Y means writing an algorithm for X that calls an algorithm for Y as a black box. Long multiplication is a familiar case: it reduces multiplying integers to single-digit products, shifts, and additions. To compute 23 × 19 you need 2·1, 2·9, 3·1, and 3·9. Divide and conquer reduces a problem to *smaller instances of itself*.
 
-## The paradigm
+### The Paradigm
 
 1. **Divide:** split the problem into smaller, independent subproblems.
 2. **Conquer:** solve each subproblem, usually by recursion.
@@ -12,7 +12,7 @@
 
 Divide-and-conquer solutions are naturally recursive. Their running times are [[concepts/divide-and-conquer/solving-recurrences|recurrences]]. The technique typically turns an O(n²) brute force into O(n log n).
 
-## Where sorting algorithms sit
+### Where Sorting Algorithms Sit
 
 | Approach | Examples | Time |
 | :--- | :--- | :--- |
@@ -23,7 +23,7 @@ Divide-and-conquer solutions are naturally recursive. Their running times are [[
 
 The lecture asks what key size k makes the non-comparison sorts no better than merge sort. Its printed answer is Ω(n log n), which matches counting sort's O(n + k) bound. For pivot analysis, see [[concepts/divide-and-conquer/quicksort-and-its-analysis|quicksort]].
 
-## Merge sort
+### Merge Sort
 
 ```text
 MergeSort(A):  if |A| = 1: return A

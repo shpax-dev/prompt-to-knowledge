@@ -1,21 +1,21 @@
-# Problems and Efficiency
+## Problems and Efficiency
 
 A computational problem is a relation between valid input instances and acceptable outputs. Interesting problems have infinitely many instances; otherwise a lookup table would solve them.
 
-## Decision and optimization
+### Decision and Optimization
 
 - **Decision problems** answer yes or no. Reachability asks: is there an s–t path in G?
 - **Optimization problems** ask for the best solution. Shortest path asks: what is the shortest s–t path, given edge lengths?
 
 The output can be a yes/no answer, a value such as a path length, or a description of the solution itself. Say which one you mean before analyzing an algorithm. [[concepts/np-completeness/polynomial-time-reductions|Reductions]] move between the two forms.
 
-## What makes an algorithm acceptable
+### What Makes an Algorithm Acceptable
 
 1. **Soundness:** every answer it returns is correct.
 2. **Completeness:** it returns an answer for every valid instance.
 3. **Resource use:** time, space, energy, or other costs.
 
-## Defining "efficient"
+### Defining "Efficient"
 
 The lecture tries three definitions in turn:
 
@@ -29,7 +29,7 @@ The polynomial definition is not perfect. n^100 is polynomial, while n^(1 + 0.02
 
 **Brute force** enumerates every candidate solution and keeps the best. Stable matching is the motivating example: with n hospitals and n doctors there are n! perfect matchings. The input is two n × n preference arrays, so it already has size Θ(n²). Gale–Shapley makes at most n² proposals because each hospital proposes to each doctor at most once. Linear time in the input size therefore means O(n²) here, not O(n).
 
-## Model of computation
+### Model of Computation
 
 Running times count primitive operations in the **word RAM** model:
 
@@ -39,7 +39,7 @@ Running times count primitive operations in the **word RAM** model:
 
 Some problems need a finer model. Multiplying n-bit integers counts bit operations, as in [[concepts/divide-and-conquer/fast-multiplication|fast multiplication]].
 
-## Worst, average, and best case
+### Worst, Average, and Best Case
 
 For an algorithm A on inputs of size n:
 

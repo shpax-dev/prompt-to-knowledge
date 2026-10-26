@@ -1,8 +1,8 @@
-# Offline Caching (Farthest-in-Future)
+## Offline Caching (Farthest-in-Future)
 
 A cache holds k pages from a larger universe U. Requests arrive for pages. A request for a page not in the cache is a **fault**, and serving it may require evicting a page. The goal is to minimize faults. In the **offline** version, the whole request sequence is known in advance.
 
-## Farthest-in-Future (FF)
+### Farthest-in-Future (FF)
 
 On a fault with a full cache, evict the page whose *next* request is farthest in the future. A page that is never requested again counts as infinitely far away.
 
@@ -20,7 +20,7 @@ On a fault with a full cache, evict the page whose *next* request is farthest in
 
 That is 4 faults in total, 2 of them cold (the first time each page is loaded). State whether you count cold faults.
 
-## Optimality by exchange
+### Optimality by Exchange
 
 **Theorem:** let S be any schedule that agrees with FF on the first j requests. Then there is a schedule S′ that agrees with FF on the first j + 1 requests and has no more faults than S.
 

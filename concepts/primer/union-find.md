@@ -1,4 +1,4 @@
-# Union–Find
+## Union–Find
 
 Union–find (disjoint-set) maintains a partition of elements into groups. It supports three operations:
 
@@ -6,7 +6,7 @@ Union–find (disjoint-set) maintains a partition of elements into groups. It su
 - **Union(x, y):** merge the sets containing x and y.
 - **Find(x):** return the *leader* (representative) of x's set. Two elements are in the same set exactly when Find returns the same leader for both.
 
-## Reversed trees
+### Reversed Trees
 
 Each set is a tree whose edges point **up** to a parent. The leader is the root, and the root is its own parent. Store the structure as an array `parent[]`:
 
@@ -19,7 +19,7 @@ Linking costs O(1) once the roots are known. Find costs the height of the tree. 
 
 **Source example:** the array `parent = [7,5,7,8,8,7,5,7,8,8]` for elements 0–9 has two roots, 7 and 8. Find(1) follows 1 → 5 → 7, and Find(3) follows 3 → 8.
 
-## Union by depth (rank)
+### Union by Depth (Rank)
 
 Always make the root of the **shallower** tree a child of the deeper root. On a tie, pick either root as the new root and increase its depth by one.
 
@@ -29,7 +29,7 @@ Always make the root of the **shallower** tree a child of the deeper root. On a 
 
 With n elements, every depth is therefore at most log₂ n, so Find and Union run in O(log n) worst case.
 
-## Path compression
+### Path Compression
 
 During Find, point every node on the search path directly at the root:
 

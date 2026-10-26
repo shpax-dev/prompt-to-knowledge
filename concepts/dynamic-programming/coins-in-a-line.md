@@ -1,13 +1,13 @@
-# Coins in a Line (DP for Games)
+## Coins in a Line (DP for Games)
 
 An even number n of coins with values sit in a line. Alice and Bob alternate turns, starting with Alice. On each turn a player takes the coin at either the head or the tail. Whoever collects more total value wins. DP is a natural way to find optimal strategies in games like this.
 
-## Greedy strategies
+### Greedy Strategies
 
 - **Take the larger end coin:** this can lose. For [1, 3, 6, 3], Alice takes 3, Bob takes 6, Alice takes 3, and Bob takes 1, so Alice has 6 and Bob has 7.
 - **Even/odd strategy:** Alice can always take all the even-position coins, or all the odd-position ones, whichever set is worth more. So she never loses. For [1, 3, 6, 3, 1, 3], the even positions sum to 9 and the odd positions to 8. But that is not optimal: a better line of play gives Alice 10.
 
-## The DP
+### The DP
 
 **Dichotomy:** Alice takes the head or the tail, and then Bob plays optimally, leaving her the *worse* of his two choices.
 

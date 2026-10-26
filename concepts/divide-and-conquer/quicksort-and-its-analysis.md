@@ -1,4 +1,4 @@
-# Quicksort and Its Analysis
+## Quicksort and Its Analysis
 
 ```text
 QuickSort(A[1..n]):
@@ -8,7 +8,7 @@ QuickSort(A[1..n]):
 
 There is no combine step, because quicksort sorts in place.
 
-## Deterministic cases
+### Deterministic Cases
 
 | Case | Recurrence | Result |
 | :--- | :--- | :--- |
@@ -21,7 +21,7 @@ The median-of-medians pivot is explained in [[concepts/divide-and-conquer/select
 
 **Average case:** if every input ordering is equally likely, T(n) ≤ (2/n)·∑ T(i − 1) + O(n), which gives O(n log n). The weak point is the uniform-input assumption. The easy fix is to **choose the pivot uniformly at random**, which turns quicksort into a Las Vegas algorithm with that expected bound on every input.
 
-## Expected comparisons with a random pivot
+### Expected Comparisons with a Random Pivot
 
 Let z₁ < z₂ < … < zₙ be the elements in sorted order. The total running time is O(n + X), where X is the number of comparisons.
 
@@ -36,7 +36,7 @@ E[X] = ∑ over i<j of 2/(j − i + 1) = 2(n + 1)Hₙ − 4n
 
 The closed form is a derived simplification, checked exactly for n = 2, 3, and 10. Here Hₙ = 1 + 1/2 + … + 1/n is the harmonic number, and ln(n + 1) < Hₙ < 1 + ln n, which you can see by comparing the sum with the integral of 1/x. So E[X] = Θ(n log n).
 
-## Concentration
+### Concentration
 
 An expected bound does not say how often the algorithm is slow. The lecture applies the [[concepts/divide-and-conquer/randomized-algorithms-and-probability|concentration inequalities]]:
 

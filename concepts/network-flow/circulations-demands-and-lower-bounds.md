@@ -1,8 +1,8 @@
-# Circulations with Demands and Lower Bounds
+## Circulations with Demands and Lower Bounds
 
 These extensions model several sources, several sinks, and edges that *must* carry some flow. Each one reduces back to ordinary [[concepts/network-flow/max-flow-and-ford-fulkerson|max flow]].
 
-## Demands
+### Demands
 
 Each node has a demand dᵥ. The lecture's sign convention is dᵥ = f_in(v) − f_out(v):
 
@@ -18,7 +18,7 @@ A feasible flow satisfies 0 ≤ f(e) ≤ cₑ and f_in(v) − f_out(v) = dᵥ fo
   - add a super sink t* with an edge v → t* of capacity dᵥ for each demand node.
 - **Test:** a feasible circulation exists exactly when the max flow from s* to t* equals D.
 
-## Lower bounds
+### Lower Bounds
 
 Each edge now has bounds ℓₑ ≤ f(e) ≤ cₑ.
 
@@ -32,7 +32,7 @@ Each edge now has bounds ℓₑ ≤ f(e) ≤ cₑ.
 
 This is a chain of reductions: lower bounds → demands → max flow.
 
-## Survey design
+### Survey Design
 
 There are n customers and k products. Customer i must be asked about between cᵢ and c′ᵢ products they bought. Product j must appear in between pⱼ and p′ⱼ surveys.
 
@@ -46,7 +46,7 @@ There are n customers and k products. Customer i must be asked about between c�
 
 A feasible circulation is a valid survey design: flow on (i, j) means customer i is asked about product j.
 
-## Airline scheduling
+### Airline Scheduling
 
 k planes must cover m flight segments. One plane can fly segment i and then segment j if there is time to service it, and to reposition it if j departs from a different airport.
 

@@ -1,6 +1,6 @@
-# Knapsack and Subset Sum
+## Knapsack and Subset Sum
 
-## Subset sum
+### Subset Sum
 
 A machine is available for time W, and jobs have run times w₁, …, wₙ. Choose a subset S that maximizes ∑ over i ∈ S of wᵢ, subject to that sum being ≤ W.
 
@@ -11,7 +11,7 @@ A machine is available for time W, and jobs have run times w₁, …, wₙ. Choo
 
 **A 1-D table is not enough.** If item n is used, the remaining items face a *smaller* budget W − wₙ. So the subproblem must track the remaining capacity as well as the item prefix.
 
-## The DP (two dimensions)
+### The DP (Two Dimensions)
 
 **Matrix:** v[i, w] for items 0..n and capacities 0..W. It is the best achievable sum using only the first i items with capacity w.
 
@@ -28,7 +28,7 @@ v[i, w] = max( v[i−1, w],  xᵢ,w · (v[i−1, w − wᵢ] + wᵢ) )
 
 **Reconstruction:** walk back from (n, W). If v[i, w] ≠ v[i − 1, w], item i was used, so move to (i − 1, w − wᵢ). This takes O(n).
 
-## Knapsack
+### Knapsack
 
 Each item now has a weight wᵢ and a separate value vᵢ. Maximize total value subject to total weight ≤ W. The only change is in the "take" branch:
 
@@ -36,11 +36,11 @@ Each item now has a weight wᵢ and a separate value vᵢ. Maximize total value 
 v[i, w] = max( v[i−1, w],  xᵢ,w · (v[i−1, w − wᵢ] + vᵢ) )
 ```
 
-## Pseudo-polynomial, not polynomial
+### Pseudo-polynomial, Not Polynomial
 
 O(nW) is polynomial in the *numeric value* W, but W takes only about log W bits to write down. If W is around 2ⁿ, the table is exponential in the input size. Subset sum is in fact [[concepts/np-completeness/classic-np-complete-reductions|NP-complete]], and that does not conflict with this DP.
 
-## Derived trace
+### Derived Trace
 
 W = 5, with items (weight, value) = (2, 3), (3, 4), (4, 5), (5, 6).
 

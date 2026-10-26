@@ -1,13 +1,13 @@
-# Selection and Median of Medians
+## Selection and Median of Medians
 
 Selection asks for the k-th smallest value in an unsorted array, the element that would be at position k after sorting. Sorting first costs O(n log n); selection can be done in linear time.
 
-## Warm-ups
+### Warm-ups
 
 - **Second largest:** recursively return (max, second max) for each half. The combined second max is the larger of the winning half's second max and the losing half's max. T(n) ≤ 2T(n/2) + Θ(1) = O(n).
 - **k largest:** recurse on both halves, keeping k candidates from each, because the top k can be split across the halves. Sort at the size-k leaves. The total is O(n + n log k). A heap-based method is in [[concepts/primer/binary-heaps|binary heaps]].
 
-## Quickselect
+### Quickselect
 
 ```text
 QuickSelect(A[1..n], k):
@@ -25,7 +25,7 @@ Partition costs O(n). Only one side is searched, so:
 
 A constant-fraction split is enough. Splitting at n/10 versus 9n/10, or at n/100 versus 99n/100, is still linear.
 
-## Median of medians (MoM)
+### Median of Medians (MoM)
 
 The goal is to find a provably good pivot without already knowing the median.
 

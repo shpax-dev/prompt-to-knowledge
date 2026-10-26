@@ -1,12 +1,12 @@
-# Weighted Interval Scheduling
+## Weighted Interval Scheduling
 
 Each request is (sᵢ, fᵢ, vᵢ): a start, a finish, and a value. The goal is a compatible set of maximum **total value**.
 
-## Greedy fails
+### Greedy Fails
 
 The lecture's example has interval 1 with value 1, interval 2 with value 3 overlapping both others, and interval 3 with value 1. [[concepts/greedy/interval-scheduling|Finish-first]] picks intervals 1 and 3 for value 2, but the optimum is interval 2 alone, with value 3.
 
-## The DP
+### The DP
 
 **Definitions:** sort the requests by finish time. For job j, let p(j) be the largest index i < j with fᵢ ≤ sⱼ, or 0 if there is none.
 
@@ -30,7 +30,7 @@ M[j] = max( M[j − 1],  M[p(j)] + vⱼ )
 
 **Reconstruction:** job j is in an optimal schedule for 1..j exactly when vⱼ + M[p(j)] ≥ M[j − 1]. If it is, jump to p(j); otherwise move to j − 1.
 
-## Derived trace
+### Derived Trace
 
 Jobs sorted by finish time, as (s, f, v):
 

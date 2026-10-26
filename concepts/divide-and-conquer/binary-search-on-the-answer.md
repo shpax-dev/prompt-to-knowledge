@@ -1,6 +1,6 @@
-# Binary Search and Searching the Answer Space
+## Binary Search and Searching the Answer Space
 
-## Binary search on a sorted array
+### Binary Search on a Sorted Array
 
 Compare the target with the middle element and recurse into the half that can still contain it.
 
@@ -10,7 +10,7 @@ T(n) = T(n/2) + Θ(1) = Θ(log n)
 
 Linear search on an unsorted array is T(n) = T(n − 1) + Θ(1) = Θ(n). Both bounds are optimal for their settings; see [[concepts/divide-and-conquer/lower-bounds|lower bounds]].
 
-## Binary search on the answer
+### Binary Search on the Answer
 
 Binary search also works on a **solution space**, as long as feasibility is monotone. Order the candidate costs 1, 2, …, k. If cost k* is achievable, every larger cost is achievable too:
 
@@ -21,7 +21,7 @@ feasible:  ✗   ✗   ✗   …    ✗    |  ✓     ✓    …
 
 Instead of asking "what is the optimum?", ask the decision question "is there a solution with cost at most k?" Binary-search for the boundary instead of stepping k down one value at a time.
 
-## Example: splitting a trip
+### Example: Splitting a Trip
 
 You have k days and n stops in order, with leg distances d₁, …, dₙ. You may rest only at stops. Minimize the largest single-day distance.
 

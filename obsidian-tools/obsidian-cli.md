@@ -3,7 +3,7 @@ original-url: https://obsidian.md/cli
 reference-url: https://obsidian.md/help/cli
 ---
 
-# Obsidian CLI
+## Obsidian CLI
 
 Obsidian CLI is a command line interface that lets you control Obsidian from your terminal for scripting, automation, and integration with external tools.
 
@@ -14,7 +14,7 @@ Anything you can do in Obsidian you can do from the command line. Obsidian CLI e
 > [!warning] Requires Obsidian 1.12 installer
 > Using the CLI requires the Obsidian 1.12 installer. See the [installer version update guide](https://obsidian.md/help/updates#Installer%20updates).
 
-## Install Obsidian CLI
+### Install Obsidian CLI
 
 Upgrade to the latest [Obsidian installer version](https://obsidian.md/help/updates) (1.12.7+).
 
@@ -26,7 +26,7 @@ Enable Obsidian CLI in Obsidian:
 
 If you run into issues installing Obsidian CLI see [[#Troubleshooting]].
 
-## Get Started
+### Get Started
 
 Obsidian CLI supports both single commands and a terminal user interface (TUI) with interactive help and autocomplete.
 
@@ -35,7 +35,7 @@ Obsidian CLI supports both single commands and a terminal user interface (TUI) w
 >
 > Looking to sync without the desktop app? See [Obsidian Headless](https://obsidian.md/help/headless).
 
-### Run a Command
+#### Run a Command
 
 Run an individual command without opening the TUI:
 
@@ -44,7 +44,7 @@ Run an individual command without opening the TUI:
 obsidian help
 ```
 
-### Use the Terminal Interface
+#### Use the Terminal Interface
 
 Use the TUI by entering `obsidian`. Subsequent commands can be entered without `obsidian`.
 
@@ -56,11 +56,11 @@ help
 
 The TUI supports autocomplete, command history, and reverse search. Use `Ctrl+R` to search your command history. See [[#Keyboard shortcuts]] for all available shortcuts.
 
-## Examples
+### Examples
 
 Here are a few examples of what Obsidian CLI can do.
 
-### Everyday Use
+#### Everyday Use
 
 ```shell
 # Open today's daily note
@@ -88,7 +88,7 @@ obsidian tags counts
 obsidian diff file=README from=1 to=3
 ```
 
-### For Developers
+#### For Developers
 
 Many [[#Developer commands]] are available for plugin and theme development. These commands allow agentic coding tools to automatically test and debug.
 
@@ -106,9 +106,9 @@ obsidian dev:screenshot path=screenshot.png
 obsidian eval code="app.vault.getFiles().length"
 ```
 
-## How to
+### How to
 
-### Use Parameters and Flags
+#### Use Parameters and Flags
 
 Commands can use **parameters** and **flags**. Most commands do not require any parameters or flags. Required parameters are marked as `required`. For example:
 
@@ -137,7 +137,7 @@ For multiline content use `\n` for newline. Use `\t` for tab.
 obsidian create name=Note content="# Title\n\nBody text"
 ```
 
-### Target a Vault
+#### Target a Vault
 
 If your terminal's current working directory is a vault folder, that vault is used by default. Otherwise, the currently active vault is used.
 
@@ -150,7 +150,7 @@ obsidian vault="My Vault" search query="test"
 
 In the TUI, use `vault:open <name>` or `<id>` to switch to a different vault.
 
-### Target a File
+#### Target a File
 
 Many commands accept `file` and `path` parameters to target a specific file. If neither is provided, the command defaults to the active file.
 
@@ -163,7 +163,7 @@ obsidian read file=Recipe
 obsidian read path="Templates/Recipe.md"
 ```
 
-### Copy Output
+#### Copy Output
 
 Add `--copy` to any command to copy the output to the clipboard:
 
@@ -172,9 +172,9 @@ read --copy
 search query="TODO" --copy
 ```
 
-## General Commands
+### General Commands
 
-### `help`
+#### `help`
 
 Show list of all available commands.
 
@@ -182,31 +182,31 @@ Show list of all available commands.
 | ----------- | --------------------------------- |
 | `<command>` | Show help for a specific command. |
 
-### `version`
+#### `version`
 
 Show Obsidian version.
 
-### `reload`
+#### `reload`
 
 Reload the app window.
 
-### `restart`
+#### `restart`
 
 Restart the app.
 
-## Bases
+### Bases
 
 Commands for [Bases](https://obsidian.md/help/bases).
 
-### `bases`
+#### `bases`
 
 List all `.base` files in the vault.
 
-### `base:views`
+#### `base:views`
 
 List views in the current base file.
 
-### `base:create`
+#### `base:create`
 
 Create a new item in a base. Defaults to the active base view if no file is specified.
 
@@ -221,7 +221,7 @@ open               # open file after creating
 newtab             # open in new tab
 ```
 
-### `base:query`
+#### `base:query`
 
 Query a base and return results.
 
@@ -232,11 +232,11 @@ view=<name>                    # view name to query
 format=json|csv|tsv|md|paths   # output format (default: json)
 ```
 
-## Bookmarks
+### Bookmarks
 
 Commands for [Bookmarks](https://obsidian.md/help/plugins/bookmarks).
 
-### `bookmarks`
+#### `bookmarks`
 
 List bookmarks.
 
@@ -246,7 +246,7 @@ verbose            # include bookmark types
 format=json|tsv|csv  # output format (default: tsv)
 ```
 
-### `bookmark`
+#### `bookmark`
 
 Add a bookmark.
 
@@ -259,11 +259,11 @@ url=<url>          # URL to bookmark
 title=<title>      # bookmark title
 ```
 
-## Command Palette
+### Command Palette
 
 Commands for [Command palette](https://obsidian.md/help/plugins/command-palette) and [Hotkeys](https://obsidian.md/help/hotkeys). This includes all commands registered by plugins.
 
-### `commands`
+#### `commands`
 
 List available command IDs.
 
@@ -271,7 +271,7 @@ List available command IDs.
 filter=<prefix>    # filter by ID prefix
 ```
 
-### `command`
+#### `command`
 
 Execute an Obsidian command.
 
@@ -279,7 +279,7 @@ Execute an Obsidian command.
 id=<command-id>    # (required) command ID to execute
 ```
 
-### `hotkeys`
+#### `hotkeys`
 
 List hotkeys for all commands.
 
@@ -289,7 +289,7 @@ verbose            # show if hotkey is custom
 format=json|tsv|csv  # output format (default: tsv)
 ```
 
-### `hotkey`
+#### `hotkey`
 
 Get hotkey for a command.
 
@@ -299,11 +299,11 @@ id=<command-id>    # (required) command ID
 verbose            # show if custom or default
 ```
 
-## Daily Notes
+### Daily Notes
 
 Commands for [Daily notes](https://obsidian.md/help/plugins/daily-notes).
 
-### `daily`
+#### `daily`
 
 Open daily note.
 
@@ -311,15 +311,15 @@ Open daily note.
 paneType=tab|split|window    # pane type to open in
 ```
 
-### `daily:path`
+#### `daily:path`
 
 Get daily note path. Returns the expected path even if the file hasn't been created yet.
 
-### `daily:read`
+#### `daily:read`
 
 Read daily note contents.
 
-### `daily:append`
+#### `daily:append`
 
 Append content to daily note.
 
@@ -331,7 +331,7 @@ inline             # append without newline
 open               # open file after adding
 ```
 
-### `daily:prepend`
+#### `daily:prepend`
 
 Prepend content to daily note.
 
@@ -343,9 +343,9 @@ inline             # prepend without newline
 open               # open file after adding
 ```
 
-## File History
+### File History
 
-### `diff`
+#### `diff`
 
 List or compare versions from local [File recovery](https://obsidian.md/help/plugins/file-recovery) and [Sync](https://obsidian.md/help/sync). Versions are numbered from newest to oldest.
 
@@ -376,7 +376,7 @@ diff file=Recipe from=2 to=1
 diff filter=sync
 ```
 
-### `history`
+#### `history`
 
 List versions from [File recovery](https://obsidian.md/help/plugins/file-recovery) only. See [[#Sync|sync:history]] for the equivalent Sync command.
 
@@ -385,11 +385,11 @@ file=<name>        # file name
 path=<path>        # file path
 ```
 
-### `history:list`
+#### `history:list`
 
 List all files with local history.
 
-### `history:read`
+#### `history:read`
 
 Read a local history version.
 
@@ -399,7 +399,7 @@ path=<path>        # file path
 version=<n>        # version number (default: 1)
 ```
 
-### `history:restore`
+#### `history:restore`
 
 Restore a local history version.
 
@@ -409,7 +409,7 @@ path=<path>        # file path
 version=<n>        # (required) version number
 ```
 
-### `history:open`
+#### `history:open`
 
 Open file recovery.
 
@@ -418,9 +418,9 @@ file=<name>        # file name
 path=<path>        # file path
 ```
 
-## Files and Folders
+### Files and Folders
 
-### `file`
+#### `file`
 
 Show file info (default: active file).
 
@@ -440,7 +440,7 @@ created    1700000000000
 modified   1700001000000
 ```
 
-### `files`
+#### `files`
 
 List files in the vault.
 
@@ -451,7 +451,7 @@ ext=<extension>    # filter by extension
 total              # return file count
 ```
 
-### `folder`
+#### `folder`
 
 Show folder info.
 
@@ -460,7 +460,7 @@ path=<path>              # (required) folder path
 info=files|folders|size  # return specific info only
 ```
 
-### `folders`
+#### `folders`
 
 List folders in the vault.
 
@@ -470,7 +470,7 @@ folder=<path>      # filter by parent folder
 total              # return folder count
 ```
 
-### `open`
+#### `open`
 
 Open a file.
 
@@ -481,7 +481,7 @@ path=<path>        # file path
 newtab             # open in new tab
 ```
 
-### `create`
+#### `create`
 
 Create or overwrite a file.
 
@@ -496,7 +496,7 @@ open               # open file after creating
 newtab             # open in new tab
 ```
 
-### `read`
+#### `read`
 
 Read file contents (default: active file).
 
@@ -505,7 +505,7 @@ file=<name>        # file name
 path=<path>        # file path
 ```
 
-### `append`
+#### `append`
 
 Append content to a file (default: active file).
 
@@ -517,7 +517,7 @@ content=<text>     # (required) content to append
 inline             # append without newline
 ```
 
-### `prepend`
+#### `prepend`
 
 Prepend content after frontmatter (default: active file).
 
@@ -529,7 +529,7 @@ content=<text>     # (required) content to prepend
 inline             # prepend without newline
 ```
 
-### `move`
+#### `move`
 
 Move or rename a file (default: active file). This will automatically update [internal links](https://obsidian.md/help/links) if turned on in your [vault settings](https://obsidian.md/help/settings#Automatically%20update%20internal%20links).
 
@@ -539,7 +539,7 @@ path=<path>        # file path
 to=<path>          # (required) destination folder or path
 ```
 
-### `rename`
+#### `rename`
 
 Rename a file (default: active file). The file extension is preserved automatically if omitted from the new name. Use [[#`move`|move]] to rename and move a file at the same time. This will automatically update [internal links](https://obsidian.md/help/links) if turned on in your [vault settings](https://obsidian.md/help/settings#Automatically%20update%20internal%20links).
 
@@ -549,7 +549,7 @@ path=<path>        # file path
 name=<name>        # (required) new file name
 ```
 
-### `delete`
+#### `delete`
 
 Delete a file (default: active file, trash by default).
 
@@ -560,11 +560,11 @@ path=<path>        # file path
 permanent          # skip trash, delete permanently
 ```
 
-## Links
+### Links
 
 Commands for [Backlinks](https://obsidian.md/help/plugins/backlinks) and [Outgoing links](https://obsidian.md/help/plugins/outgoing-links).
 
-### `backlinks`
+#### `backlinks`
 
 List backlinks to a file (default: active file).
 
@@ -577,7 +577,7 @@ total              # return backlink count
 format=json|tsv|csv  # output format (default: tsv)
 ```
 
-### `links`
+#### `links`
 
 List outgoing links from a file (default: active file).
 
@@ -588,7 +588,7 @@ path=<path>        # file path
 total              # return link count
 ```
 
-### `unresolved`
+#### `unresolved`
 
 List unresolved links in vault.
 
@@ -599,7 +599,7 @@ verbose            # include source files
 format=json|tsv|csv  # output format (default: tsv)
 ```
 
-### `orphans`
+#### `orphans`
 
 List files with no incoming links.
 
@@ -607,7 +607,7 @@ List files with no incoming links.
 total              # return orphan count
 ```
 
-### `deadends`
+#### `deadends`
 
 List files with no outgoing links.
 
@@ -615,11 +615,11 @@ List files with no outgoing links.
 total              # return dead-end count
 ```
 
-## Outline
+### Outline
 
 Commands for [Outline](https://obsidian.md/help/plugins/outline).
 
-### `outline`
+#### `outline`
 
 Show headings for the current file.
 
@@ -631,11 +631,11 @@ format=tree|md|json  # output format (default: tree)
 total              # return heading count
 ```
 
-## Plugins
+### Plugins
 
 Commands for [Core plugins](https://obsidian.md/help/plugins) and [Community plugins](https://obsidian.md/help/community-plugins).
 
-### `plugins`
+#### `plugins`
 
 List installed plugins.
 
@@ -646,7 +646,7 @@ versions               # include version numbers
 format=json|tsv|csv    # output format (default: tsv)
 ```
 
-### `plugins:enabled`
+#### `plugins:enabled`
 
 List enabled plugins.
 
@@ -657,7 +657,7 @@ versions               # include version numbers
 format=json|tsv|csv    # output format (default: tsv)
 ```
 
-### `plugins:restrict`
+#### `plugins:restrict`
 
 Toggle or check restricted mode.
 
@@ -666,7 +666,7 @@ on                 # enable restricted mode
 off                # disable restricted mode
 ```
 
-### `plugin`
+#### `plugin`
 
 Get plugin info.
 
@@ -674,7 +674,7 @@ Get plugin info.
 id=<plugin-id>     # (required) plugin ID
 ```
 
-### `plugin:enable`
+#### `plugin:enable`
 
 Enable a plugin.
 
@@ -683,7 +683,7 @@ id=<id>                # (required) plugin ID
 filter=core|community  # plugin type
 ```
 
-### `plugin:disable`
+#### `plugin:disable`
 
 Disable a plugin.
 
@@ -692,7 +692,7 @@ id=<id>                # (required) plugin ID
 filter=core|community  # plugin type
 ```
 
-### `plugin:install`
+#### `plugin:install`
 
 Install a community plugin.
 
@@ -702,7 +702,7 @@ id=<id>            # (required) plugin ID
 enable             # enable after install
 ```
 
-### `plugin:uninstall`
+#### `plugin:uninstall`
 
 Uninstall a community plugin.
 
@@ -710,7 +710,7 @@ Uninstall a community plugin.
 id=<id>            # (required) plugin ID
 ```
 
-### `plugin:reload`
+#### `plugin:reload`
 
 Reload a plugin (for developers).
 
@@ -718,11 +718,11 @@ Reload a plugin (for developers).
 id=<id>            # (required) plugin ID
 ```
 
-## Properties
+### Properties
 
 Commands related to [Properties](https://obsidian.md/help/properties).
 
-### `aliases`
+#### `aliases`
 
 List aliases in the vault. Use `active` or `file`/`path` to show aliases for a specific file.
 
@@ -735,7 +735,7 @@ verbose            # include file paths
 active             # show aliases for active file
 ```
 
-### `properties`
+#### `properties`
 
 List properties in the vault. Use `active` or `file`/`path` to show properties for a specific file.
 
@@ -751,7 +751,7 @@ counts             # include occurrence counts
 active             # show properties for active file
 ```
 
-### `property:set`
+#### `property:set`
 
 Set a property on a file (default: active file).
 
@@ -763,7 +763,7 @@ file=<name>                                    # file name
 path=<path>                                    # file path
 ```
 
-### `property:remove`
+#### `property:remove`
 
 Remove a property from a file (default: active file).
 
@@ -773,7 +773,7 @@ file=<name>        # file name
 path=<path>        # file path
 ```
 
-### `property:read`
+#### `property:read`
 
 Read a property value from a file (default: active file).
 
@@ -783,15 +783,15 @@ file=<name>        # file name
 path=<path>        # file path
 ```
 
-## Publish
+### Publish
 
 Commands for [Obsidian Publish](https://obsidian.md/help/publish).
 
-### `publish:site`
+#### `publish:site`
 
 Show publish site info (slug, URL).
 
-### `publish:list`
+#### `publish:list`
 
 List published files.
 
@@ -799,7 +799,7 @@ List published files.
 total              # return published file count
 ```
 
-### `publish:status`
+#### `publish:status`
 
 List publish changes.
 
@@ -810,7 +810,7 @@ changed            # show changed files only
 deleted            # show deleted files only
 ```
 
-### `publish:add`
+#### `publish:add`
 
 Publish a file or all changed files (default: active file).
 
@@ -821,7 +821,7 @@ path=<path>        # file path
 changed            # publish all changed files
 ```
 
-### `publish:remove`
+#### `publish:remove`
 
 Unpublish a file (default: active file).
 
@@ -830,7 +830,7 @@ file=<name>        # file name
 path=<path>        # file path
 ```
 
-### `publish:open`
+#### `publish:open`
 
 Open file on published site (default: active file).
 
@@ -839,11 +839,11 @@ file=<name>        # file name
 path=<path>        # file path
 ```
 
-## Random Notes
+### Random Notes
 
 Commands for [Random note](https://obsidian.md/help/plugins/random-note).
 
-### `random`
+#### `random`
 
 Open a random note.
 
@@ -853,7 +853,7 @@ folder=<path>      # limit to folder
 newtab             # open in new tab
 ```
 
-### `random:read`
+#### `random:read`
 
 Read a random note (includes path).
 
@@ -861,11 +861,11 @@ Read a random note (includes path).
 folder=<path>      # limit to folder
 ```
 
-## Search
+### Search
 
 Commands for [Search](https://obsidian.md/help/plugins/search).
 
-### `search`
+#### `search`
 
 Search vault for text. Returns matching file paths.
 
@@ -879,7 +879,7 @@ total              # return match count
 case               # case sensitive
 ```
 
-### `search:context`
+#### `search:context`
 
 Search with matching line context. Returns grep-style `path:line: text` output.
 
@@ -892,7 +892,7 @@ format=text|json   # output format (default: text)
 case               # case sensitive
 ```
 
-### `search:open`
+#### `search:open`
 
 Open search view.
 
@@ -900,14 +900,14 @@ Open search view.
 query=<text>       # initial search query
 ```
 
-## Sync
+### Sync
 
 Commands for [Obsidian Sync](https://obsidian.md/help/sync).
 
 > [!tip] Sync without the desktop app
 > These commands control Sync within the running Obsidian app. To sync vaults from the command line without the desktop app, see [Headless Sync](https://obsidian.md/help/sync/headless).
 
-### `sync`
+#### `sync`
 
 Pause or resume sync.
 
@@ -916,11 +916,11 @@ on                 # resume sync
 off                # pause sync
 ```
 
-### `sync:status`
+#### `sync:status`
 
 Show sync status and usage.
 
-### `sync:history`
+#### `sync:history`
 
 List sync version history for a file (default: active file).
 
@@ -931,7 +931,7 @@ path=<path>        # file path
 total              # return version count
 ```
 
-### `sync:read`
+#### `sync:read`
 
 Read a sync version (default: active file).
 
@@ -941,7 +941,7 @@ path=<path>        # file path
 version=<n>        # (required) version number
 ```
 
-### `sync:restore`
+#### `sync:restore`
 
 Restore a sync version (default: active file).
 
@@ -951,7 +951,7 @@ path=<path>        # file path
 version=<n>        # (required) version number
 ```
 
-### `sync:open`
+#### `sync:open`
 
 Open sync history (default: active file).
 
@@ -960,7 +960,7 @@ file=<name>        # file name
 path=<path>        # file path
 ```
 
-### `sync:deleted`
+#### `sync:deleted`
 
 List deleted files in sync.
 
@@ -968,11 +968,11 @@ List deleted files in sync.
 total              # return deleted file count
 ```
 
-## Tags
+### Tags
 
 Commands for [Tags](https://obsidian.md/help/tags).
 
-### `tags`
+#### `tags`
 
 List tags in the vault. Use `active` or `file`/`path` to show tags for a specific file.
 
@@ -987,7 +987,7 @@ format=json|tsv|csv  # output format (default: tsv)
 active             # show tags for active file
 ```
 
-### `tag`
+#### `tag`
 
 Get tag info.
 
@@ -998,11 +998,11 @@ total              # return occurrence count
 verbose            # include file list and count
 ```
 
-## Tasks
+### Tasks
 
 Commands for task management.
 
-### `tasks`
+#### `tasks`
 
 List tasks in the vault. Use `active` or `file`/`path` to show tasks for a specific file.
 
@@ -1045,7 +1045,7 @@ tasks verbose
 tasks 'status=?'
 ```
 
-### `task`
+#### `task`
 
 Show or update a task.
 
@@ -1082,11 +1082,11 @@ task file=Recipe line=8 status=-  # → [-]
 task daily line=3 done            # Mark daily note task as done
 ```
 
-## Templates
+### Templates
 
 Commands for [Templates](https://obsidian.md/help/plugins/templates).
 
-### `templates`
+#### `templates`
 
 List templates.
 
@@ -1094,7 +1094,7 @@ List templates.
 total              # return template count
 ```
 
-### `template:read`
+#### `template:read`
 
 Read template content.
 
@@ -1105,7 +1105,7 @@ title=<title>      # title for variable resolution
 resolve            # resolve template variables
 ```
 
-### `template:insert`
+#### `template:insert`
 
 Insert template into active file.
 
@@ -1117,11 +1117,11 @@ name=<template>    # (required) template name
 - `resolve` option processes `{{date}}`, `{{time}}`, `{{title}}` variables
 - Use `create path=<path> template=<name>` to create a file with a template
 
-## Themes and Snippets
+### Themes and Snippets
 
 Commands for [Themes](https://obsidian.md/help/Extending%2BObsidian/Themes) and [CSS snippets](https://obsidian.md/help/snippets).
 
-### `themes`
+#### `themes`
 
 List installed themes.
 
@@ -1129,7 +1129,7 @@ List installed themes.
 versions           # include version numbers
 ```
 
-### `theme`
+#### `theme`
 
 Show active theme or get info.
 
@@ -1137,7 +1137,7 @@ Show active theme or get info.
 name=<name>        # theme name for details
 ```
 
-### `theme:set`
+#### `theme:set`
 
 Set active theme.
 
@@ -1145,7 +1145,7 @@ Set active theme.
 name=<name>        # (required) theme name (empty for default)
 ```
 
-### `theme:install`
+#### `theme:install`
 
 Install a community theme.
 
@@ -1155,7 +1155,7 @@ name=<name>        # (required) theme name
 enable             # activate after install
 ```
 
-### `theme:uninstall`
+#### `theme:uninstall`
 
 Uninstall a theme.
 
@@ -1163,15 +1163,15 @@ Uninstall a theme.
 name=<name>        # (required) theme name
 ```
 
-### `snippets`
+#### `snippets`
 
 List installed CSS snippets.
 
-### `snippets:enabled`
+#### `snippets:enabled`
 
 List enabled CSS snippets.
 
-### `snippet:enable`
+#### `snippet:enable`
 
 Enable a CSS snippet.
 
@@ -1179,7 +1179,7 @@ Enable a CSS snippet.
 name=<name>        # (required) snippet name
 ```
 
-### `snippet:disable`
+#### `snippet:disable`
 
 Disable a CSS snippet.
 
@@ -1187,11 +1187,11 @@ Disable a CSS snippet.
 name=<name>        # (required) snippet name
 ```
 
-## Unique Notes
+### Unique Notes
 
 Commands for [Unique note creator](https://obsidian.md/help/plugins/unique-note).
 
-### `unique`
+#### `unique`
 
 Create unique note.
 
@@ -1203,9 +1203,9 @@ paneType=tab|split|window    # pane type to open in
 open               # open file after creating
 ```
 
-## Vault
+### Vault
 
-### `vault`
+#### `vault`
 
 Show vault info.
 
@@ -1213,7 +1213,7 @@ Show vault info.
 info=name|path|files|folders|size  # return specific info only
 ```
 
-### `vaults`
+#### `vaults`
 
 List known vaults.
 
@@ -1222,7 +1222,7 @@ total              # return vault count
 verbose            # include vault paths
 ```
 
-### `vault:open`
+#### `vault:open`
 
 Switch to a different vault (TUI only).
 
@@ -1230,11 +1230,11 @@ Switch to a different vault (TUI only).
 name=<name>        # (required) vault name
 ```
 
-## Web Viewer
+### Web Viewer
 
 Commands for [Web viewer](https://obsidian.md/help/plugins/web-viewer).
 
-### `web`
+#### `web`
 
 Open URL in web viewer.
 
@@ -1244,11 +1244,11 @@ url=<url>          # (required) URL to open
 newtab             # open in new tab
 ```
 
-## Wordcount
+### Wordcount
 
 Commands for [Word count](https://obsidian.md/help/plugins/word-count).
 
-### `wordcount`
+#### `wordcount`
 
 Count words and characters (default: active file).
 
@@ -1260,11 +1260,11 @@ words              # return word count only
 characters         # return character count only
 ```
 
-## Workspace
+### Workspace
 
 Commands for [Workspace](https://obsidian.md/help/workspace) and the [Workspaces](https://obsidian.md/help/plugins/workspaces) plugin.
 
-### `workspace`
+#### `workspace`
 
 Show workspace tree.
 
@@ -1272,7 +1272,7 @@ Show workspace tree.
 ids                # include workspace item IDs
 ```
 
-### `workspaces`
+#### `workspaces`
 
 List saved workspaces.
 
@@ -1280,7 +1280,7 @@ List saved workspaces.
 total              # return workspace count
 ```
 
-### `workspace:save`
+#### `workspace:save`
 
 Save current layout as workspace.
 
@@ -1288,7 +1288,7 @@ Save current layout as workspace.
 name=<name>        # workspace name
 ```
 
-### `workspace:load`
+#### `workspace:load`
 
 Load a saved workspace.
 
@@ -1296,7 +1296,7 @@ Load a saved workspace.
 name=<name>        # (required) workspace name
 ```
 
-### `workspace:delete`
+#### `workspace:delete`
 
 Delete a saved workspace.
 
@@ -1304,7 +1304,7 @@ Delete a saved workspace.
 name=<name>        # (required) workspace name
 ```
 
-### `tabs`
+#### `tabs`
 
 List open tabs.
 
@@ -1312,7 +1312,7 @@ List open tabs.
 ids                # include tab IDs
 ```
 
-### `tab:open`
+#### `tab:open`
 
 Open a new tab.
 
@@ -1322,7 +1322,7 @@ file=<path>        # file to open
 view=<type>        # view type to open
 ```
 
-### `recents`
+#### `recents`
 
 List recently opened files.
 
@@ -1330,15 +1330,15 @@ List recently opened files.
 total              # return recent file count
 ```
 
-## Developer Commands
+### Developer Commands
 
 Commands to help you develop [Community plugins](https://obsidian.md/help/community-plugins) and [Themes](https://obsidian.md/help/Extending%2BObsidian/Themes). Learn more by heading to the [Obsidian Developer Documentation](https://docs.obsidian.md).
 
-### `devtools`
+#### `devtools`
 
 Toggle Electron dev tools.
 
-### `dev:debug`
+#### `dev:debug`
 
 Attach/detach Chrome DevTools Protocol debugger.
 
@@ -1347,7 +1347,7 @@ on                 # attach debugger
 off                # detach debugger
 ```
 
-### `dev:cdp`
+#### `dev:cdp`
 
 Run a Chrome DevTools Protocol command.
 
@@ -1356,7 +1356,7 @@ method=<CDP.method>  # (required) CDP method to call
 params=<json>        # method parameters as JSON
 ```
 
-### `dev:errors`
+#### `dev:errors`
 
 Show captured JavaScript errors.
 
@@ -1364,7 +1364,7 @@ Show captured JavaScript errors.
 clear              # clear the error buffer
 ```
 
-### `dev:screenshot`
+#### `dev:screenshot`
 
 Take a screenshot (returns base64 PNG).
 
@@ -1372,7 +1372,7 @@ Take a screenshot (returns base64 PNG).
 path=<filename>    # output file path
 ```
 
-### `dev:console`
+#### `dev:console`
 
 Show captured console messages.
 
@@ -1383,7 +1383,7 @@ level=log|warn|error|info|debug  # filter by log level
 clear                            # clear the console buffer
 ```
 
-### `dev:css`
+#### `dev:css`
 
 Inspect CSS with source locations.
 
@@ -1392,7 +1392,7 @@ selector=<css>     # (required) CSS selector
 prop=<name>        # filter by property name
 ```
 
-### `dev:dom`
+#### `dev:dom`
 
 Query DOM elements.
 
@@ -1407,7 +1407,7 @@ inner              # return innerHTML instead of outerHTML
 all                # return all matches instead of first
 ```
 
-### `dev:mobile`
+#### `dev:mobile`
 
 Toggle mobile emulation.
 
@@ -1416,7 +1416,7 @@ on                 # enable mobile emulation
 off                # disable mobile emulation
 ```
 
-### `eval`
+#### `eval`
 
 Execute JavaScript and return result.
 
@@ -1424,11 +1424,11 @@ Execute JavaScript and return result.
 code=<javascript>  # (required) JavaScript code to execute
 ```
 
-## Keyboard Shortcuts
+### Keyboard Shortcuts
 
 These shortcuts are available in the [[#Use the terminal interface|TUI]].
 
-### Navigation
+#### Navigation
 
 | Action                                                | Shortcut       |
 | ----------------------------------------------------- | -------------- |
@@ -1439,7 +1439,7 @@ These shortcuts are available in the [[#Use the terminal interface|TUI]].
 | Move back one word                                    | `Alt+B`        |
 | Move forward one word                                 | `Alt+F`        |
 
-### Editing
+#### Editing
 
 | Action                  | Shortcut                   |
 | ----------------------- | -------------------------- |
@@ -1447,7 +1447,7 @@ These shortcuts are available in the [[#Use the terminal interface|TUI]].
 | Delete to end of line   | `Ctrl+K`                   |
 | Delete previous word    | `Ctrl+W` / `Alt+Backspace` |
 
-### Autocomplete
+#### Autocomplete
 
 | Action                                             | Shortcut    |
 | -------------------------------------------------- | ----------- |
@@ -1456,7 +1456,7 @@ These shortcuts are available in the [[#Use the terminal interface|TUI]].
 | Enter suggestion mode (from fresh input)           | `↓`         |
 | Accept first/selected suggestion (at end of line)  | `→`         |
 
-### History
+#### History
 
 | Action                                                     | Shortcut       |
 | ---------------------------------------------------------- | -------------- |
@@ -1464,7 +1464,7 @@ These shortcuts are available in the [[#Use the terminal interface|TUI]].
 | Next history entry / navigate suggestions down             | `↓` / `Ctrl+N` |
 | Reverse history search (type to filter, `Ctrl+R` to cycle) | `Ctrl+R`       |
 
-### Other
+#### Other
 
 | Action                                                 | Shortcut            |
 | ------------------------------------------------------ | ------------------- |
@@ -1473,7 +1473,7 @@ These shortcuts are available in the [[#Use the terminal interface|TUI]].
 | Clear screen                                           | `Ctrl+L`            |
 | Exit                                                   | `Ctrl+C` / `Ctrl+D` |
 
-## Troubleshooting
+### Troubleshooting
 
 If you are having trouble running Obsidian CLI:
 
@@ -1482,13 +1482,13 @@ If you are having trouble running Obsidian CLI:
 - Restart your terminal after registering the CLI for the PATH changes to take effect.
 - Obsidian must be running. The CLI connects to the running Obsidian instance.
 
-### Windows
+#### Windows
 
 Windows uses a terminal redirector that connects Obsidian to stdin/stdout properly. This is necessary because Obsidian normally runs as a GUI app which is incompatible with terminal outputs on Windows. When you install Obsidian 1.12.7+ the `Obsidian.com` terminal redirector will be added in the folder where you installed the `Obsidian.exe` file.
 
 The CLI registration adds Obsidian into your user's PATH variable, which only takes effect after you re-start the terminal.
 
-### macOS
+#### macOS
 
 The CLI registration creates a symlink at `/usr/local/bin/obsidian` pointing to the CLI binary bundled inside the app. This requires administrator privileges — you will be prompted via a system dialog.
 
@@ -1506,7 +1506,7 @@ sudo ln -sf /Applications/Obsidian.app/Contents/MacOS/obsidian-cli /usr/local/bi
 
 > [!note] If you previously registered the CLI with an older version of Obsidian, you may have a leftover PATH entry in `~/.zprofile`. The new registration process removes this automatically, but if it remains, you can safely delete the lines starting with `# Added by Obsidian` from `~/.zprofile`.
 
-### Linux
+#### Linux
 
 The CLI registration copies the CLI binary to `~/.local/bin/obsidian`. This is done because some Linux installation methods run from temporary directories that cannot be symlinked persistently.
 

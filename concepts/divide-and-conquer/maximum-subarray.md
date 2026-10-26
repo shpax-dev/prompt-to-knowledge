@@ -1,12 +1,12 @@
-# Maximum Subarray
+## Maximum Subarray
 
 Given an integer array A, find the non-empty contiguous subarray with the largest sum. The course solves it three times, which makes it a good comparison of techniques.
 
-## 1. Brute force: Θ(n²)
+### 1. Brute Force: Θ(n²)
 
 Check every start i and every end j ≥ i. Recomputing each sum from scratch costs O(n³). The trick is to extend a running sum as j increases, so each (i, j) pair costs O(1): ∑ (n − i + 1) = n(n + 1)/2 = Θ(n²).
 
-## 2. Divide and conquer: O(n log n)
+### 2. Divide and Conquer: O(n Log N)
 
 ```text
 MaxSubarray(A):  if |A| = 1: return A[1]
@@ -21,7 +21,7 @@ MaxSubarray(A):  if |A| = 1: return A[1]
 - *Correctness:* by induction, A1 and A2 are optimal within their halves, and M is the best crossing subarray. Every subarray is in one of those three groups.
 - *Runtime:* the merge sort recurrence, O(n log n).
 
-## 3. Dynamic programming: O(n)
+### 3. Dynamic Programming: O(n)
 
 Let s[i] be the best sum of a subarray **ending at** i:
 

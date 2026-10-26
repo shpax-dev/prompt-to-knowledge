@@ -1,12 +1,12 @@
-# Bellman–Ford Shortest Paths
+## Bellman–Ford Shortest Paths
 
 Input: a directed graph with n nodes, m edges, and edge weights cᵥw that may be **negative**, but no negative cycles. Goal: shortest paths.
 
-## Why negative cycles are excluded
+### Why Negative Cycles Are Excluded
 
 If a negative cycle lies on a path from s to t, you can loop around it forever, so the shortest path length is −∞. Without negative cycles, some shortest path is **simple** and has at most n − 1 edges.
 
-## The DP
+### The DP
 
 The lecture computes shortest paths *to* a fixed sink t.
 
@@ -28,13 +28,13 @@ M[i][v] = min( M[i−1][v],  min over w of ( M[i−1][w] + cᵥw ) )     # cᵥw
 
 **Space:** keep a single array M[v] and update it in place each round, for O(n). To recover the path, keep `first[v]`, the next hop on v's current best path.
 
-## Negative-cycle detection
+### Negative-cycle Detection
 
 If there is no negative cycle, M[i][v] = M[n − 1][v] for every i ≥ n − 1.
 
 **Test:** add a node t with a 0-cost edge from every node, run n rounds instead of n − 1, and check whether M[n][v] ≠ M[n − 1][v] for any v. A change means a negative cycle exists.
 
-## Derived trace (shortest paths to t = d)
+### Derived Trace (Shortest Paths to T = D)
 
 Edges: s→a 4, s→b 2, b→a −1, a→c 2, b→c 5, c→d −3, d→b 4. The only cycle, b→a→c→d→b, has weight +2.
 

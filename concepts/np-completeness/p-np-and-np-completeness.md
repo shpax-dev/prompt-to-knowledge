@@ -1,10 +1,10 @@
-# P, NP, and NP-Completeness
+## P, NP, and NP-Completeness
 
-## P
+### P
 
 Encode an instance as a binary string s with |s| bits. An algorithm runs in polynomial time if it takes O(poly(|s|)) steps in the worst case. **P** is the set of decision problems that have a polynomial-time algorithm.
 
-## Efficient certification and NP
+### Efficient Certification and NP
 
 A **certifier** B(s, t) for problem X takes an instance s and a proposed proof t that s is a yes-instance. It is efficient if:
 
@@ -19,7 +19,7 @@ B(s, t) = no means only that *this particular t* is not a valid proof; it does n
 
 Whether P = NP is one of the seven Clay Mathematics Institute Millennium Prize Problems.
 
-## NP-hard and NP-complete
+### NP-hard and NP-complete
 
 - **NP-hard:** every Y ∈ NP satisfies Y ≤ₚ X. X itself need not be in NP.
 - **NP-complete:** X is NP-hard *and* X ∈ NP.
@@ -29,7 +29,7 @@ Whether P = NP is one of the seven Clay Mathematics Institute Millennium Prize P
 - If P = NP, then X ∈ NP = P.
 - If X ∈ P, every NP problem reduces to X, so every NP problem is in P.
 
-## The first NP-complete problem
+### The First NP-complete Problem
 
 **Cook–Levin (1971/1973, paraphrased): Circuit Satisfiability (CSAT) is NP-complete.**
 
@@ -38,7 +38,7 @@ A circuit is a DAG of AND, OR, and NOT gates with some inputs fixed and some fre
 - **CSAT ∈ NP:** the input size is Θ(|V|). Given values for the inputs, evaluate the gates in topological order in O(|V|).
 - **Every X ∈ NP reduces to CSAT:** turn X's certifier B_X into a circuit. Hard-wire the n input bits of s, leave the poly(n) bits of t free, and let the gates implement B_X. The output is 1 exactly when some certificate is accepted.
 
-## How to prove that a new problem X is NP-complete
+### How to Prove that a New Problem X is NP-complete
 
 1. Prove that X ∈ NP: give a certificate and a polynomial-time check.
 2. Choose a known NP-complete problem Y.
@@ -47,7 +47,7 @@ A circuit is a DAG of AND, OR, and NOT gates with some inputs fixed and some fre
    - prove that if s_Y is yes, then s_X is yes;
    - prove that if s_X is yes, then s_Y was yes.
 
-## 3SAT is NP-complete
+### 3SAT Is NP-complete
 
 - **In NP:** the certificate is a truth assignment.
 - **CSAT ≤ₚ 3SAT:** give every circuit node v a variable xᵥ, and add clauses that force each gate's value.
@@ -62,7 +62,7 @@ The gate clauses were checked visually against PDF p. 115, because text extracti
 
 **Corollary:** 3SAT, IS, VC, SC, and SP are NP-complete, via the chains in [[concepts/np-completeness/polynomial-time-reductions|polynomial-time reductions]].
 
-## Beyond NP
+### Beyond NP
 
 - **coNP:** X ∈ coNP when its complement is in NP. Certification is asymmetric: one certificate proves "yes", but proving "no" may need something else. If X ∈ P, its complement is in P too.
   - **Open:** does NP = coNP? Does P = NP ∩ coNP?

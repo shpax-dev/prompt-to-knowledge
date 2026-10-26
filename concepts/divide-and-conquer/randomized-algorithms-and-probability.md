@@ -1,11 +1,11 @@
-# Randomized Algorithms and Probability Tools
+## Randomized Algorithms and Probability Tools
 
-## Average case versus randomized
+### Average Case versus Randomized
 
 - **Average-case analysis:** the *input* is random, drawn from some distribution D, and you bound the expected cost under D. The assumption may be unrealistic. Uniformly random input orderings rarely happen in practice.
 - **Randomized algorithm:** the *algorithm* flips coins. The guarantee then holds for every input, in expectation over the algorithm's own choices.
 
-## Kinds of randomized algorithm
+### Kinds of Randomized Algorithm
 
 | Type | Correctness | Running time |
 | :--- | :--- | :--- |
@@ -15,7 +15,7 @@
 
 Randomized quicksort is Las Vegas: the output is always sorted, and only the running time varies.
 
-## Probability review
+### Probability Review
 
 - **Sample space** Ω with masses p(i) ≥ 0 summing to 1. An **event** is a set of outcomes, with Pr[E] = ∑ over i ∈ E of p(i), and Pr[not E] = 1 − Pr[E]. For a fair 4-sided die, Pr[roll 1] = 1/4 and Pr[roll 2, 3, or 4] = 3/4.
 - **Conditional probability:** Pr[E | F] = Pr[E ∩ F] / Pr[F].
@@ -26,7 +26,7 @@ Randomized quicksort is Las Vegas: the output is always sorted, and only the run
 - **Linearity of expectation:** E[X + Y] = E[X] + E[Y] and E[aX] = aE[X], *even when X and Y are dependent*. For independent X and Y, E[XY] = E[X]·E[Y].
 - **Variance:** Var(X) = E[(X − μ)²]. It measures spread around the mean μ.
 
-## Concentration inequalities
+### Concentration Inequalities
 
 Two distributions can share a mean while one is far more certain. Concentration bounds limit how far a variable strays from its mean.
 

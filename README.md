@@ -1,6 +1,6 @@
-# Prompt to Knowledge · AI Study Vault
+## Prompt to Knowledge · AI Study Vault
 
-### Algorithms notes you can talk to
+### Algorithms Notes You Can Talk to
 
 Search your notes, connect ideas, and build on what you learn, all from a prompt.
 
@@ -25,13 +25,13 @@ I found myself frequently forgetting a lot of the processes and protocols I lear
 
 ---
 
-## From scattered material to connected knowledge
+## From Scattered Material to Connected Knowledge
 
 Lecture slides, worked examples, and practice problems all contain useful information, but finding the right explanation takes time. Adding new material can also create duplicate notes, or lose track of the source behind an answer.
 
 This vault gives the agent a clear process: **find the existing note, read the context, and make only the requested change**. Related ideas stay linked. Dijkstra lives with the greedy algorithms but links to Bellman–Ford in dynamic programming, and to union–find in the primer. Source references stay attached to the knowledge they support.
 
-## How it works
+## How it Works
 
 ```mermaid
 flowchart LR
@@ -61,7 +61,7 @@ flowchart LR
 
 The agent runs commands through local terminal access. Obsidian supplies the CLI, and the repository supplies the notes and the instructions. When the agent is unsure of a command's syntax, it checks the installed `obsidian help` first, then falls back to the copy of the official CLI documentation in `obsidian-tools/`. Every change is plain Markdown that you can review with Git.
 
-## Three ways to use it
+## Three Ways to Use it
 
 | Ask | Practice | Build |
 | :--- | :--- | :--- |
@@ -69,7 +69,7 @@ The agent runs commands through local terminal access. Obsidian supplies the CLI
 | "Why does Dijkstra fail with negative edges, and what replaces it?" | "Quiz me on knapsack tables. Wait for my answer." | "Add this Kruskal example to the MST note and preserve its sources." |
 | Read the answer in chat. | Get hints and feedback on your reasoning. | Review the changed file and its links. |
 
-### A small demo to try
+### A Small Demo to Try
 
 **1 · Read without editing**
 
@@ -122,7 +122,7 @@ prompt-to-knowledge/
 
 </details>
 
-## The instructions are part of the design
+## The Instructions Are Part of the Design
 
 The three `AGENTS.md` files give the agent different responsibilities:
 
@@ -136,7 +136,7 @@ Questions are read-only by default. Documentation changes require a request. Inc
 
 These files guide the agent's behavior; access permissions come from the execution environment. The root file is global **within this project**, so it does not need to replace your personal agent configuration.
 
-## Get it running
+## Get it Running
 
 1. **Open the folder in Obsidian** as a separate vault.
 2. **Enable the Obsidian CLI** in Settings → General and complete registration. Keep Obsidian running.
@@ -150,7 +150,7 @@ obsidian vault="prompt-to-knowledge" search query="path:concepts Dijkstra"
 
 Use the name you gave your local vault. The [setup guide](setup/local-setup.md) covers requirements, command examples, and optional Git setup.
 
-## Engineering choices
+## Engineering Choices
 
 - **Plain Markdown:** notes are easy to inspect, edit, and version.
 - **Obsidian-aware commands:** the agent searches and edits through the same application that manages the knowledge base.
