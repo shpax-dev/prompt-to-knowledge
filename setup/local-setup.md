@@ -45,7 +45,21 @@ obsidian vault="prompt-to-knowledge" append path="concepts/greedy/minimum-spanni
 
 These mutation commands are illustrative, not installation steps. Search and read before appending. Check `obsidian help append` or other command-specific help when the installed syntax differs.
 
+## Local CLI reference
+
+[[obsidian-tools/obsidian-cli|obsidian-tools/obsidian-cli.md]] is a copy of the official Obsidian CLI documentation. The agent uses it as a fallback when it needs the parameters, flags, or examples for a command:
+
+1. `obsidian help <command>` comes first, because it reflects the installed version.
+2. The local reference comes next, for fuller descriptions, or when the CLI cannot be reached.
+3. The quirks listed below, and in the root `AGENTS.md`, cover behavior observed in this vault that the reference does not mention.
+
+The reference also documents commands this vault deliberately avoids without explicit approval: deletes, restores, publish, sync, plugin and theme management, `eval`, and developer commands. To refresh it, replace the file with a newer copy of the official page. It is the one file in the vault that intentionally keeps YAML frontmatter, which holds only its source URLs.
+
+## Known CLI quirks
+
 Inside `content` values, the CLI turns a backslash followed by `n` into a newline, and a backslash followed by `t` into a tab. It has no escape for a literal backslash-n, so write such text with Obsidian or an editor instead. In an agent script, pass arguments as an array rather than interpolating untrusted source text into a shell command, then read the note back to confirm the result.
+
+`move` requires the destination folder to exist, and the CLI cannot create folders. With "Automatically update internal links" turned on, Obsidian rewrites links to moved notes as bare names, so restore path-qualified wikilinks afterwards and check with `unresolved`. A command can also finish its work and then hang, for example while Obsidian shows a dialog. In scripts, give each call a timeout, redirect stdin from `/dev/null`, and verify the result.
 
 ## Optional Git setup
 
@@ -65,7 +79,7 @@ You can later share selected, reviewed Obsidian settings. A `.gitignore` does no
 
 ## References
 
-- [Obsidian CLI official documentation](https://obsidian.md/help/cli), consulted 2026-10-20.
-- [OpenAI: Custom instructions with AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md), consulted 2026-10-20.
+- [Obsidian CLI official documentation](https://obsidian.md/help/cli). A local copy is in `obsidian-tools/obsidian-cli.md`.
+- [OpenAI: Custom instructions with AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md).
 
 The source PDFs are optional for reading the notes, but required for checking their original wording or diagrams. See [[setup/source-materials|source materials]].

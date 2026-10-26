@@ -40,9 +40,11 @@ flowchart LR
     C["<b>Obsidian CLI</b><br/>Search · Read · Create · Append"]
     V[("<b>Obsidian vault</b><br/>Markdown notes + links")]
     G["<b>AGENTS.md</b><br/>Scope · Sources · Editing rules"]
+    R["<b>obsidian-tools/</b><br/>Local CLI reference"]
 
     U --> A
     G -. guides .-> A
+    R -. syntax fallback .-> A
     A --> C
     C <--> V
     C -->|Results| A
@@ -53,11 +55,11 @@ flowchart LR
     classDef knowledge fill:#fef3c7,stroke:#d97706,color:#78350f
     class U person
     class A,G agent
-    class C tool
+    class C,R tool
     class V knowledge
 ```
 
-The agent runs commands through local terminal access. Obsidian supplies the CLI, and the repository supplies the notes and the instructions. Every change is plain Markdown that you can review with Git.
+The agent runs commands through local terminal access. Obsidian supplies the CLI, and the repository supplies the notes and the instructions. When the agent is unsure of a command's syntax, it checks the installed `obsidian help` first, then falls back to the copy of the official CLI documentation in `obsidian-tools/`. Every change is plain Markdown that you can review with Git.
 
 ## Three ways to use it
 
@@ -101,6 +103,8 @@ prompt-to-knowledge/
 ├── AGENTS.md               # Rules for the whole vault
 ├── README.md
 ├── setup/                  # Local setup and source details
+├── obsidian-tools/
+│   └── obsidian-cli.md     # Local CLI reference the agent falls back on
 ├── concepts/
 │   ├── AGENTS.md           # How to explain and maintain concepts
 │   ├── primer/
@@ -150,6 +154,7 @@ Use the name you gave your local vault. The [setup guide](setup/local-setup.md) 
 
 - **Plain Markdown:** notes are easy to inspect, edit, and version.
 - **Obsidian-aware commands:** the agent searches and edits through the same application that manages the knowledge base.
+- **A local tool reference:** a copy of the CLI documentation ships with the vault, so the agent can look up syntax without browsing. The installed `obsidian help` still wins if the two disagree, and risky commands such as publish, sync, plugin installs, and permanent deletes stay off-limits without explicit approval.
 - **Search before creation:** an existing explanation is extended whenever a topic already has a home.
 - **Organized by technique, not by lecture:** a question about "greedy" or "DP" lands in one folder, and cross-links connect the graph algorithms that span folders.
 - **Source references:** every note points back to the original PDF pages, and unresolved slide discrepancies are recorded instead of silently fixed.
